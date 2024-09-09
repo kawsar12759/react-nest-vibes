@@ -25,8 +25,8 @@ const SignUp = () => {
                 <div className="hero bg-[#F3F4F6] p-28">
                     <div className="">
                         <div className="text-center text-[#374151]">
-                            <h1 className="text-5xl font-bold mb-2">Join NestVibes</h1>
-                            <p className="mb-7">Sign up to unlock exclusive features and find your dream home.</p>
+                            <h1 className="text-5xl font-bold mb-4">Join NestVibes</h1>
+                            <p className="mb-10">Sign up to unlock exclusive features and find your dream home.</p>
                         </div>
                         <div className="card bg-[#F9FAFB] border border-[#E5E7EB] w-full shadow-2xl">
                             <form className="card-body" onSubmit={handleSignUp}>

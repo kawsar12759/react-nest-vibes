@@ -16,7 +16,7 @@ const Navbar = () => {
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <div tabIndex={0} role="button" className="btn btn-ghost xl:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -38,7 +38,7 @@ const Navbar = () => {
                     </div>
                     <Link className="btn btn-ghost text-2xl">NestVibes</Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center hidden xl:flex">
                     <ul className="menu menu-horizontal px-1 font-medium">
                         {navLinks}
                     </ul>

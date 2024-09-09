@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name": "Emily R.",
+        "rating": 5,
+        "date": "2024-08-15",
+        "review": "NestVibes made my apartment search a breeze! Their team was incredibly helpful and found me the perfect place in no time. Highly recommend their services."
+    },
+    {
+        "id": 2,
+        "name": "Michael S.",
+        "rating": 4,
+        "date": "2024-07-28",
+        "review": "The options they provided were fantastic. I’m thrilled with my new vacation rental. A few minor hiccups with paperwork, but overall, a great experience."
+    },
+    {
+        "id": 3,
+        "name": "Sarah L.",
+        "rating": 5,
+        "date": "2024-09-01",
+        "review": "Personalized service, attention to detail, and great communication. NestVibes made the stressful process of moving into student housing so much easier!"
+    },
+    {
+        "id": 4,
+        "name": "John W.",
+        "rating": 5,
+        "date": "2024-08-10",
+        "review": "I’ve used NestVibes twice now and both experiences have been outstanding. They truly care about finding the right home for you."
+    },
+    {
+        "id": 5,
+        "name": "Laura B.",
+        "rating": 4,
+        "date": "2024-08-25",
+        "review": "The team was knowledgeable and professional. I found a great apartment, though the process took a bit longer than expected. Still, would definitely use NestVibes again!"
+    },
+    {
+        "id": 6,
+        "name": "David P.",
+        "rating": 5,
+        "date": "2024-09-05",
+        "review": "NestVibes exceeded my expectations! The virtual tour feature was amazing, and it allowed me to find my dream home even before visiting in person."
+    },
+    {
+        "id": 7,
+        "name": "Rachel M.",
+        "rating": 4,
+        "date": "2024-07-30",
+        "review": "They have a wide range of options to choose from. I appreciated the flexibility and support I received during my search. Would recommend to friends."
+    }
+]
