@@ -4,15 +4,15 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
 
     const navLinks = <>
-        <li><NavLink className={({ isActive }) => isActive ? "!text-[#0D9488] !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#0D9488] active:!bg-[#004D40] active:!text-[#FFFFFF]  visited:!bg-[#F5F5F5] visited:!text-[#0D9488]" : "active:!bg-[#004D40] active:!text-[#FFFFFF]"} to='/'>Home</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "!text-[#0D9488] !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#0D9488] active:!bg-[#004D40] active:!text-[#FFFFFF]  visited:!bg-[#F5F5F5] visited:!text-[#0D9488]" : "active:!bg-[#004D40] active:!text-[#FFFFFF]"} to='/about'>About Us</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "!text-[#0D9488] !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#0D9488] active:!bg-[#004D40] active:!text-[#FFFFFF]  visited:!bg-[#F5F5F5] visited:!text-[#0D9488]" : "active:!bg-[#004D40] active:!text-[#FFFFFF]"} to='/blog'>Blog</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "!text-[#0D9488] !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#0D9488] active:!bg-[#004D40] active:!text-[#FFFFFF]  visited:!bg-[#F5F5F5] visited:!text-[#0D9488]" : "active:!bg-[#004D40] active:!text-[#FFFFFF]"} to='/reviews'>Reviews</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "!text-[#0D9488] !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#0D9488] active:!bg-[#004D40] active:!text-[#FFFFFF]  visited:!bg-[#F5F5F5] visited:!text-[#0D9488]" : "active:!bg-[#004D40] active:!text-[#FFFFFF]"} to='/updateprofile'>Update Profile</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/'>Home</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/about'>About Us</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/blog'>Blog</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/reviews'>Reviews</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/updateprofile'>Update Profile</NavLink></li>
     </>
 
     return (
-        <div className="bg-[#0D9488] text-[#E5E7EB] px-16 py-2">
+        <div className="bg-[#111827] sticky text-[#E5E7EB] px-16 py-2 top-0 z-50">
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -32,7 +32,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 text-[#0D9488] rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-base-100 text-[#111827] rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             {navLinks}
                         </ul>
                     </div>
@@ -51,8 +51,8 @@ const Navbar = () => {
                                 src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                         </div>
                     </div>
-                    <Link><button className="bg-[#4CAF50] text-[#FFFFFF] px-6 py-3 rounded-md mr-5 font-semibold">Sign In</button></Link>
-                    <Link className="bg-[#FF5722] text-[#FFFFFF] px-6 py-3 rounded-md font-semibold"><button>Sign Up</button></Link>
+                    <Link to='/signin'><button className="btn bg-[#FBBF24] text-[#111827] hover:bg-yellow-600 px-6 py-3 rounded-md mr-5 font-semibold border-none">Sign In</button></Link>
+                    <Link to='/signup'><button className="btn bg-[#EF4444] text-white hover:bg-red-600 px-6 py-3 rounded-md font-semibold border-none">Sign Up</button></Link>
                 </div>
             </div>
         </div>

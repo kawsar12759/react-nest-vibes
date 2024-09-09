@@ -4,6 +4,8 @@ import carouselImg3 from '../../assets/carouselImg3.jpg';
 import carouselImg4 from '../../assets/carouselImg4.png';
 
 const Banner = () => {
+
+    
     return (
         <div>
             <div className="carousel w-full">
@@ -16,9 +18,9 @@ const Banner = () => {
                         <p className="text-lg text-gray-200 mt-2 text-center mb-4">
                             Discover a world of exceptional living spaces tailored to your needs. Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
                         </p>
-                        <div className='flex justify-center'>
-                            <a href="/brochure" className="bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600">View Listing</a>
-                            <a href="/contact" className=" ml-4 bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600">Contact Us</a>
+                        <div className='flex justify-center font-medium'>
+                            <a href="/brochure" className="bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</a>
+                            <a href="/contact" className=" ml-4 bg-[#38BDF8] text-white py-3 px-5 rounded hover:bg-[#0284C7]">Contact Us</a>
                         </div>
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -35,9 +37,9 @@ const Banner = () => {
                         <p className="text-lg text-gray-200 mt-2 text-center mb-4">
                             Discover a world of exceptional living spaces tailored to your needs. Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
                         </p>
-                        <div className='flex justify-center'>
-                            <a href="/brochure" className="bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600">View Listing</a>
-                            <a href="/contact" className=" ml-4 bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600">Contact Us</a>
+                        <div className='flex justify-center font-medium'>
+                            <a href="/brochure" className="bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</a>
+                            <a href="/contact" className=" ml-4 bg-[#38BDF8] text-white py-3 px-5 rounded hover:bg-[#0284C7]">Contact Us</a>
                         </div>
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -54,9 +56,9 @@ const Banner = () => {
                         <p className="text-lg text-gray-200 mt-2 text-center mb-4">
                             Discover a world of exceptional living spaces tailored to your needs. Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
                         </p>
-                        <div className='flex justify-center'>
-                            <a href="/brochure" className="bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600">View Listing</a>
-                            <a href="/contact" className=" ml-4 bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600">Contact Us</a>
+                        <div className='flex justify-center font-medium'>
+                            <a href="/brochure" className="bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</a>
+                            <a href="/contact" className=" ml-4 bg-[#38BDF8] text-white py-3 px-5 rounded hover:bg-[#0284C7]">Contact Us</a>
                         </div>
 
                     </div>
@@ -74,9 +76,9 @@ const Banner = () => {
                         <p className="text-lg text-gray-200 mt-2 text-center mb-4">
                             Discover a world of exceptional living spaces tailored to your needs. Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
                         </p>
-                        <div className='flex justify-center'>
-                            <a href="/brochure" className="bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600">View Listing</a>
-                            <a href="/contact" className=" ml-4 bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600">Contact Us</a>
+                        <div className='flex justify-center font-medium'>
+                            <a href="/brochure" className="bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</a>
+                            <a href="/contact" className=" ml-4 bg-[#38BDF8] text-white py-3 px-5 rounded hover:bg-[#0284C7]">Contact Us</a>
                         </div>
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
