@@ -1,0 +1,575 @@
+[
+    {
+        "id": "1",
+        "estate_title": "Spacious Family Home",
+        "image": "https://i.ibb.co.com/0DwvSb3/w991x660.jpg",
+        "category": "Apartment",
+        "description": "A large family home with ample space and a beautiful backyard.",
+        "price": "$750,000",
+        "status": "Sale",
+        "area": "2,400 sq ft",
+        "location": "Houston, TX",
+        "facilities": [
+            "Living Room",
+            "Garden",
+            "Garage",
+            "Kitchen"
+        ],
+        "bedrooms": 4,
+        "washrooms": 3,
+        "reviews": [
+            {
+                "name": "John Doe",
+                "comment": "Beautiful home with plenty of space for my family. Loved the garden.",
+                "rating": 4.5
+            },
+            {
+                "name": "Jane Smith",
+                "comment": "Spacious rooms and great amenities, but the garage could be bigger.",
+                "rating": 4.0
+            },
+            {
+                "name": "Robert Brown",
+                "comment": "Amazing location and a perfect home for a family. Highly recommended.",
+                "rating": 4.7
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "estate_title": "Modern Studio Apartment",
+        "image": "https://i.ibb.co.com/Fw7NSmJ/modern-studio-apartment-design-with-bedroom-living-space-922357-14365.jpg",
+        "category": "Apartment",
+        "description": "A sleek studio apartment with contemporary design and central location.",
+        "price": "$900/month",
+        "status": "Rent",
+        "area": "600 sq ft",
+        "location": "San Francisco, CA",
+        "facilities": [
+            "Living Room",
+            "Kitchen",
+            "Bathroom"
+        ],
+        "bedrooms": 1,
+        "washrooms": 1,
+        "reviews": [
+            {
+                "name": "Alice Johnson",
+                "comment": "Great location and design. Perfect for a single person.",
+                "rating": 4.8
+            },
+            {
+                "name": "Mark Evans",
+                "comment": "Beautifully designed apartment. Loved the layout and amenities.",
+                "rating": 4.6
+            },
+            {
+                "name": "Emma Clark",
+                "comment": "Compact but efficient. Great location, but a bit noisy.",
+                "rating": 4.2
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "estate_title": "Cozy Studio Apartment",
+        "image": "https://i.ibb.co.com/HKnbfJ8/Interior-TR-INT2-architecture-01-1-Kindesign.jpg",
+        "category": "Apartment",
+        "description": "A compact, cozy studio with efficient use of space and modern finishes.",
+        "price": "$850/month",
+        "status": "Rent",
+        "area": "400 sq ft",
+        "location": "Boston, MA",
+        "facilities": [
+            "Living Room",
+            "Kitchen",
+            "Bathroom"
+        ],
+        "bedrooms": 1,
+        "washrooms": 1,
+        "reviews": [
+            {
+                "name": "Mark Wilson",
+                "comment": "Very cozy and well-located. The kitchen could be bigger.",
+                "rating": 4.2
+            },
+            {
+                "name": "Rachel Green",
+                "comment": "Perfect for students or a single person. I enjoyed my stay here.",
+                "rating": 4.3
+            },
+            {
+                "name": "Daniel Lee",
+                "comment": "Nice and compact. Everything is within easy reach. Good price for Boston.",
+                "rating": 4.1
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "estate_title": "Modern Student Suite",
+        "image": "https://i.ibb.co.com/Jq478tQ/hanak-nabytek-moderni-studentsky-pokoj-2.jpg",
+        "category": "Student Housing",
+        "description": "An updated student suite with convenient access to university facilities.",
+        "price": "$550/month",
+        "status": "Rent",
+        "area": "500 sq ft",
+        "location": "Ann Arbor, MI",
+        "facilities": [
+            "Living Room",
+            "Study Area",
+            "Kitchen",
+            "Laundry"
+        ],
+        "bedrooms": 1,
+        "washrooms": 1,
+        "reviews": [
+            {
+                "name": "Sophia Green",
+                "comment": "Affordable and close to campus, perfect for students.",
+                "rating": 4.7
+            },
+            {
+                "name": "Mike Turner",
+                "comment": "Clean and modern. The study area is a great addition for students.",
+                "rating": 4.5
+            },
+            {
+                "name": "Jessica Adams",
+                "comment": "Convenient location, but the kitchen was a bit small.",
+                "rating": 4.2
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "estate_title": "Charming Cottage",
+        "image": "https://i.ibb.co.com/ZWFv8J7/08-16-22-Home-Tour-Kelly-Martin-Interiors-6.jpg",
+        "category": "Vacation Rental",
+        "description": "A quaint cottage with a cozy interior and beautiful garden.",
+        "price": "$250/night",
+        "status": "Rent",
+        "area": "1,000 sq ft",
+        "location": "Portland, OR",
+        "facilities": [
+            "Living Room",
+            "Garden",
+            "Kitchen",
+            "Fireplace"
+        ],
+        "bedrooms": 2,
+        "washrooms": 1,
+        "reviews": [
+            {
+                "name": "Emily Roberts",
+                "comment": "Amazing garden and peaceful location, we had a great stay.",
+                "rating": 4.9
+            },
+            {
+                "name": "Michael Edwards",
+                "comment": "Loved the garden and fireplace. Perfect getaway for a weekend.",
+                "rating": 4.7
+            },
+            {
+                "name": "Linda Harris",
+                "comment": "Cozy and charming. Would definitely stay here again.",
+                "rating": 4.6
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "estate_title": "Affordable Student Dorm",
+        "image": "https://i.ibb.co.com/x7VwV8g/020822-Fresno-State-Dorms-CM-01-ezgif-com-webp-to-jpg-converter.jpg",
+        "category": "Student Housing",
+        "description": "Budget-friendly dorms with essential amenities close to campus.",
+        "price": "$400/month",
+        "status": "Rent",
+        "area": "350 sq ft",
+        "location": "College City, FL",
+        "facilities": [
+            "Living Room",
+            "Study Area",
+            "Kitchen",
+            "Bathroom"
+        ],
+        "bedrooms": 1,
+        "washrooms": 1,
+        "reviews": [
+            {
+                "name": "Liam Peterson",
+                "comment": "Simple but efficient dorms. Very close to university facilities.",
+                "rating": 4.3
+            },
+            {
+                "name": "Olivia Johnson",
+                "comment": "Affordable and convenient, but it could use better lighting.",
+                "rating": 4.1
+            },
+            {
+                "name": "Ethan Scott",
+                "comment": "Very functional and clean, perfect for a student on a budget.",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "estate_title": "Beachfront Villa",
+        "image": "https://i.ibb.co.com/C9m7547/31099036.jpg",
+        "category": "Vacation Rental",
+        "description": "Experience paradise with this beachfront villa offering direct beach access.",
+        "price": "$450/night",
+        "status": "Rent",
+        "area": "3,200 sq ft",
+        "location": "Malibu, CA",
+        "facilities": [
+            "Living Room",
+            "Pool",
+            "Kitchen",
+            "Patio"
+        ],
+        "bedrooms": 5,
+        "washrooms": 4,
+        "reviews": [
+            {
+                "name": "Lucas Moore",
+                "comment": "Stunning views and luxury living. Worth every penny!",
+                "rating": 5.0
+            },
+            {
+                "name": "Sarah Thompson",
+                "comment": "Unbelievable location, great for a family vacation. Highly recommend.",
+                "rating": 4.9
+            },
+            {
+                "name": "Jason Miller",
+                "comment": "The beach access was perfect. Beautiful house and amazing service.",
+                "rating": 5.0
+            }
+        ]
+    },
+    {
+        "id": "8",
+        "estate_title": "Sunnyvale Apartment",
+        "image": "https://i.ibb.co.com/HrBMSWn/property1.png",
+        "category": "Apartment",
+        "description": "A modern apartment with stunning views and high-end amenities.",
+        "price": "$1,200/month",
+        "status": "Rent",
+        "area": "1,200 sq ft",
+        "location": "Sunnyvale, CA",
+        "facilities": [
+            "Living Room",
+            "Gym",
+            "Kitchen",
+            "Balcony"
+        ],
+        "bedrooms": 2,
+        "washrooms": 2,
+        "reviews": [
+            {
+                "name": "Grace Collins",
+                "comment": "Modern and clean apartment, great value for the price.",
+                "rating": 4.5
+            },
+            {
+                "name": "Samuel Brown",
+                "comment": "The gym and balcony are great features. Convenient location as well.",
+                "rating": 4.6
+            },
+            {
+                "name": "Isabella White",
+                "comment": "Lovely apartment with beautiful views. Highly recommend it.",
+                "rating": 4.8
+            }
+        ]
+    },
+    {
+        "id": "9",
+        "estate_title": "Luxury Penthouse",
+        "image": "https://i.ibb.co.com/rx7KnPW/Como-Residences-Penthouse-Nakheel-3.jpg",
+        "category": "Apartment",
+        "description": "A stunning luxury penthouse with floor-to-ceiling windows and panoramic views.",
+        "price": "$5,000/month",
+        "status": "Rent",
+        "area": "3,500 sq ft",
+        "location": "New York, NY",
+        "facilities": [
+            "Living Room",
+            "Rooftop",
+            "Gym",
+            "Balcony"
+        ],
+        "bedrooms": 4,
+        "washrooms": 3,
+        "reviews": [
+            {
+                "name": "Henry Carter",
+                "comment": "Amazing views and spacious living. It’s a dream apartment.",
+                "rating": 5.0
+            },
+            {
+                "name": "Ava Davis",
+                "comment": "Luxurious, comfortable, and located in the heart of the city. Great stay.",
+                "rating": 4.9
+            },
+            {
+                "name": "Mia Walker",
+                "comment": "The rooftop and the gym are fantastic. Perfect for entertaining guests.",
+                "rating": 4.8
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "estate_title": "Urban Student Housing",
+        "image": "https://i.ibb.co.com/Zm2pBcp/image.jpg",
+        "category": "Student Housing",
+        "description": "Affordable urban housing for students with great facilities.",
+        "price": "$450/month",
+        "status": "Rent",
+        "area": "400 sq ft",
+        "location": "Austin, TX",
+        "facilities": [
+            "Living Room",
+            "Study Area",
+            "Kitchen",
+            "Laundry"
+        ],
+        "bedrooms": 1,
+        "washrooms": 1,
+        "reviews": [
+            {
+                "name": "Zoe Turner",
+                "comment": "Nice and clean. Close to campus and affordable rent.",
+                "rating": 4.4
+            },
+            {
+                "name": "James Harris",
+                "comment": "Great for students. Quiet and peaceful, but the room is a bit small.",
+                "rating": 4.2
+            },
+            {
+                "name": "Sophia Wright",
+                "comment": "Convenient location and affordable rent. I enjoyed my stay.",
+                "rating": 4.3
+            }
+        ]
+    },
+    {
+        "id": "11",
+        "estate_title": "Cozy Mountain Cabin",
+        "image": "https://i.ibb.co.com/VmjQVxn/Austin-Cabin-Walton-Architecture-exterior.jpg",
+        "category": "Vacation Rental",
+        "description": "A charming cabin in the mountains with rustic decor and scenic views.",
+        "price": "$200/night",
+        "status": "Rent",
+        "area": "1,200 sq ft",
+        "location": "Aspen, CO",
+        "facilities": [
+            "Living Room",
+            "Fireplace",
+            "Kitchen",
+            "Deck"
+        ],
+        "bedrooms": 2,
+        "washrooms": 2,
+        "reviews": [
+            {
+                "name": "Emma Williams",
+                "comment": "Beautiful location, perfect for a relaxing getaway.",
+                "rating": 4.8
+            },
+            {
+                "name": "Charlotte Wilson",
+                "comment": "Such a cozy cabin! The fireplace was a great touch for the chilly nights.",
+                "rating": 4.7
+            },
+            {
+                "name": "David Evans",
+                "comment": "Loved the mountain views and the peace and quiet. Definitely coming back.",
+                "rating": 4.9
+            }
+        ]
+    },
+    {
+        "id": "12",
+        "estate_title": "Spacious Loft",
+        "image": "https://i.ibb.co.com/yfbCbqg/CGP47905-aw-009-1.jpg",
+        "category": "Apartment",
+        "description": "A large, open loft with modern amenities and high ceilings.",
+        "price": "$2,000/month",
+        "status": "Rent",
+        "area": "2,000 sq ft",
+        "location": "Chicago, IL",
+        "facilities": [
+            "Living Room",
+            "Gym",
+            "Kitchen",
+            "Workspace"
+        ],
+        "bedrooms": 2,
+        "washrooms": 2,
+        "reviews": [
+            {
+                "name": "Sophia Brown",
+                "comment": "The loft is huge and the workspace is great for remote work.",
+                "rating": 4.6
+            },
+            {
+                "name": "Lucas Harris",
+                "comment": "Perfect for professionals who need a home office. Spacious and modern.",
+                "rating": 4.7
+            },
+            {
+                "name": "Megan Parker",
+                "comment": "Great loft with lots of natural light. The location is fantastic too.",
+                "rating": 4.8
+            }
+        ]
+    },
+    {
+        "id": "13",
+        "estate_title": "Grand Estate",
+        "image": "https://i.ibb.co.com/cQmvH5d/model-3579.jpg",
+        "category": "Apartment",
+        "description": "A luxurious estate with expansive grounds and exquisite design.",
+        "price": "$3,500,000",
+        "status": "Sale",
+        "area": "5,000 sq ft",
+        "location": "Beverly Hills, CA",
+        "facilities": [
+            "Living Room",
+            "Swimming Pool",
+            "Home Theater",
+            "Gym"
+        ],
+        "bedrooms": 6,
+        "washrooms": 5,
+        "reviews": [
+            {
+                "name": "Olivia Martin",
+                "comment": "A truly luxurious property. Perfect for a large family.",
+                "rating": 5.0
+            },
+            {
+                "name": "Michael Roberts",
+                "comment": "The home theater and swimming pool are absolutely fantastic!",
+                "rating": 4.9
+            },
+            {
+                "name": "Isabella Taylor",
+                "comment": "The design is incredible, and the space is perfect for entertaining.",
+                "rating": 5.0
+            }
+        ]
+    },
+    {
+        "id": "14",
+        "estate_title": "Elegant Townhouse",
+        "image": "https://i.ibb.co.com/vXVXdLg/elegant-townhouse-city-center-98908-5211.jpg",
+        "category": "Apartment",
+        "description": "A stylish townhouse with a private garden and high-quality finishes.",
+        "price": "$2,500/month",
+        "status": "Rent",
+        "area": "1,800 sq ft",
+        "location": "Los Angeles, CA",
+        "facilities": [
+            "Living Room",
+            "Garden",
+            "Kitchen",
+            "Garage"
+        ],
+        "bedrooms": 3,
+        "washrooms": 2,
+        "reviews": [
+            {
+                "name": "William Clark",
+                "comment": "Lovely townhouse with a great private garden. Very spacious.",
+                "rating": 4.7
+            },
+            {
+                "name": "Amelia Johnson",
+                "comment": "Loved the garden and the location. Perfect for families.",
+                "rating": 4.6
+            },
+            {
+                "name": "Daniel Lee",
+                "comment": "High-quality finishes and a beautiful home. Would recommend!",
+                "rating": 4.8
+            }
+        ]
+    },
+    {
+        "id": "15",
+        "estate_title": "Cozy Urban Loft",
+        "image": "https://i.ibb.co.com/kgBX6SN/mockup-urban-loft-living-room-with-industrial-elements-839035-304526.jpg",
+        "category": "Apartment",
+        "description": "A stylish urban loft with modern finishes and a vibrant location.",
+        "price": "$1,600/month",
+        "status": "Rent",
+        "area": "1,100 sq ft",
+        "location": "Seattle, WA",
+        "facilities": [
+            "Living Room",
+            "Kitchen",
+            "Workspace"
+        ],
+        "bedrooms": 2,
+        "washrooms": 1,
+        "reviews": [
+            {
+                "name": "Mason Hall",
+                "comment": "Great location in the city, perfect for young professionals.",
+                "rating": 4.4
+            },
+            {
+                "name": "Emma Davis",
+                "comment": "The loft is beautifully decorated and has a fantastic view. A bit noisy at times but worth it.",
+                "rating": 4.2
+            },
+            {
+                "name": "Liam Martinez",
+                "comment": "Comfortable and convenient. The modern amenities make it a great choice for anyone looking for a stylish place.",
+                "rating": 4.5
+            }
+        ]
+    },
+    {
+        "id": "16",
+        "estate_title": "Riverside Cottage",
+        "image": "https://i.ibb.co.com/JdLNYVH/166121273.jpg",
+        "category": "Vacation Rental",
+        "description": "A charming riverside cottage perfect for a tranquil escape.",
+        "price": "$275/night",
+        "status": "Rent",
+        "area": "1,200 sq ft",
+        "location": "Jacksonville, FL",
+        "facilities": [
+            "Living Room",
+            "Fireplace",
+            "Deck",
+            "Kitchen"
+        ],
+        "bedrooms": 2,
+        "washrooms": 2,
+        "reviews": [
+            {
+                "name": "Charlotte Lewis",
+                "comment": "Lovely place by the river. It was peaceful and exactly what we needed.",
+                "rating": 4.8
+            },
+            {
+                "name": "Olivia Brown",
+                "comment": "The cottage was quaint and cozy, with a beautiful deck overlooking the river. The perfect spot for a relaxing getaway.",
+                "rating": 4.7
+            },
+            {
+                "name": "Ethan Wilson",
+                "comment": "A fantastic retreat. Everything was as described, and the setting was even more beautiful in person.",
+                "rating": 4.9
+            }
+        ]
+    }
+]

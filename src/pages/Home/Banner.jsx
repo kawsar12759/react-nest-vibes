@@ -19,8 +19,8 @@ const Banner = () => {
                             Discover a world of exceptional living spaces tailored to your needs. Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
                         </p>
                         <div className='flex justify-center font-medium'>
-                            <a href="/brochure" className="bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</a>
-                            <a href="/contact" className=" ml-4 bg-[#38BDF8] text-white py-3 px-5 rounded hover:bg-[#0284C7]">Contact Us</a>
+                            <button className="btn border-none bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</button>
+                            <button className="btn border-none ml-4 bg-[#38BDF8] text-white py-3 px-5 rounded hover:bg-[#0284C7]">Contact Us</button>
                         </div>
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -38,8 +38,8 @@ const Banner = () => {
                             Discover a world of exceptional living spaces tailored to your needs. Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
                         </p>
                         <div className='flex justify-center font-medium'>
-                            <a href="/brochure" className="bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</a>
-                            <a href="/contact" className=" ml-4 bg-[#38BDF8] text-white py-3 px-5 rounded hover:bg-[#0284C7]">Contact Us</a>
+                            <button className="btn border-none bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</button>
+                            <button className="btn border-none ml-4 bg-[#38BDF8] text-white py-3 px-5 rounded hover:bg-[#0284C7]">Contact Us</button>
                         </div>
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -57,8 +57,8 @@ const Banner = () => {
                             Discover a world of exceptional living spaces tailored to your needs. Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
                         </p>
                         <div className='flex justify-center font-medium'>
-                            <a href="/brochure" className="bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</a>
-                            <a href="/contact" className=" ml-4 bg-[#38BDF8] text-white py-3 px-5 rounded hover:bg-[#0284C7]">Contact Us</a>
+                            <button className="btn border-none bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</button>
+                            <button className="btn border-none ml-4 bg-[#38BDF8] text-white py-3 px-5 rounded hover:bg-[#0284C7]">Contact Us</button>
                         </div>
 
                     </div>
@@ -77,8 +77,8 @@ const Banner = () => {
                             Discover a world of exceptional living spaces tailored to your needs. Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
                         </p>
                         <div className='flex justify-center font-medium'>
-                            <a href="/brochure" className="bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</a>
-                            <a href="/contact" className=" ml-4 bg-[#38BDF8] text-white py-3 px-5 rounded hover:bg-[#0284C7]">Contact Us</a>
+                            <button className="btn border-none bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</button>
+                            <button className="btn border-none ml-4 bg-[#38BDF8] text-white py-3 px-5 rounded hover:bg-[#0284C7]">Contact Us</button>
                         </div>
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">

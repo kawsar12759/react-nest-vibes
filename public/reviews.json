@@ -47,5 +47,33 @@
         "rating": 4,
         "date": "2024-07-30",
         "review": "They have a wide range of options to choose from. I appreciated the flexibility and support I received during my search. Would recommend to friends."
-    }
+    },
+    {
+        "id": 8,
+        "name": "Alice Smith",
+        "rating": 5,
+        "date": "2024-08-15",
+        "review": "NestVibes made our home-buying process incredibly smooth. Their team was professional, responsive, and truly understood our needs. We couldn't be happier with our new home!"
+      },
+      {
+        "id": 9,
+        "name": "Bob Johnson",
+        "rating": 4,
+        "date": "2024-08-20",
+        "review": "The service at NestVibes was great, and their expertise in the local market helped us find a fantastic property. We had a few hiccups during the process, but overall, it was a positive experience."
+      },
+      {
+        "id": 10,
+        "name": "Charlie Brown",
+        "rating": 5,
+        "date": "2024-09-01",
+        "review": "Excellent experience with NestVibes! They went above and beyond to ensure we were satisfied with every aspect of our home purchase. Highly recommend them to anyone looking to buy or sell a property."
+      },
+      {
+        "id": 11,
+        "name": "Dana White",
+        "rating": 3,
+        "date": "2024-09-05",
+        "review": "While the team at NestVibes was friendly and professional, we encountered several delays during the closing process. The home we bought is great, but the experience could have been more seamless."
+      }
 ]
