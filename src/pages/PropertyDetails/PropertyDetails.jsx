@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import bed from '../../assets/bed.png';
 import bath from '../../assets/bathroom.png';
 
@@ -6,6 +6,16 @@ const PropertyDetails = () => {
     const properties = useLoaderData();
     const { id } = useParams();
     const property = properties.find(p => p.id === id);
+    if (!property) {
+        return <div className="h-96 flex items-center justify-center">
+            <div>
+                <p className="text-3xl font-bold mb-3">Property not found</p>
+                <div className="flex justify-center">
+                    <Link to='/'><button className="btn bg-[#111827] text-white px-5 py-3 hover:bg-[#374151] hover:text-[#F9FAFB] ">Go Back</button></Link>
+                </div>
+            </div>
+        </div>;
+    }
 
     return (
         <div className="container mx-auto p-6 space-y-12">
@@ -64,14 +74,20 @@ const PropertyDetails = () => {
 
 
             {/* Reviews Section */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-white py-3 rounded-lg ">
                 <h2 className="text-3xl font-bold mb-4 text-gray-800">What Our Customers Say</h2>
-                <div className="">
+                <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {property.reviews.map((review, index) => (
-                        <div key={index} className="border-t py-4">
-                            <p className="text-xl font-semibold text-gray-800">{review.name}</p>
-                            <p className="text-lg text-gray-600">{review.comment}</p>
-                            <p className="text-sm text-gray-500">Rating: {review.rating}/5</p>
+                        <div key={index} className="shadow-md flex flex-col rounded-lg p-4 h-full">
+
+                            <div className="flex-grow mb-3">
+                                <p className="text-xl font-semibold text-gray-800 mb-4">{review.name}</p>
+                                <p className="text-md text-gray-600">{review.comment}</p>
+                            </div>
+                            <div className="flex  justify-end ">
+                                <p className="text-sm text-[#FF6F00] border border-[#FF6F00]  px-3 py-1 rounded-full">Rating: {review.rating}</p>
+                            </div>
+
                         </div>
                     ))}
                 </div>

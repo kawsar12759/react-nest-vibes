@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../../providers/AuthProvider";
+
 
 const SignUp = () => {
+
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const navigate = useNavigate();
+    const { createUser, profileUpdate, setIsSigningUp, user } = useContext(AuthContext);
+    useEffect(() => {
+        if (user) {
+            navigate('/'); // Redirect to home page if user is logged in
+        }
+    }, [user, navigate]);
+
     const handleSignUp = e => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -13,9 +26,50 @@ const SignUp = () => {
         const photo = e.target.photourl.value;
         const password = e.target.password.value;
         const confirmPassword = e.target.confirmpassword.value;
-        const termChecked = e.target.terms.checked;
 
-        console.log(name, email, photo, password, confirmPassword, termChecked);
+
+
+
+
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+            toast.warning('Provide a valid email address');
+            return;
+        }
+        else if (!/^https?:\/\/(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(?:\/[^\s]*)?\.(?:jpg|jpeg|png|gif|bmp|webp)$/.test(photo)) {
+            toast.warning('Provide a valid Photo URL');
+            return;
+        }
+        else if (password.length < 8) {
+            toast.warning('Password length must be at least 8 characters');
+            return;
+        }
+        else if (password !== confirmPassword) {
+            toast.warning('Please Make sure both the passwords are same');
+            return;
+        }
+        else if (!/^(?=.*[a-z])(?=.*[A-Z]).*$/.test(password)) {
+            toast.warning('Password must contain at lease one upper case letter');
+            return;
+        }
+
+        setIsSigningUp(true);
+        createUser(email, password)
+            .then(result => {
+
+                profileUpdate(name, photo)
+                    .then(() => {
+                        // Profile updated!
+                        setIsSigningUp(false);
+                        // ...
+                    })
+                    .catch(error => {
+                        // An error occurred
+                        // ...
+                    });
+            })
+            .catch(error => toast.error(error.message === "Firebase: Error (auth/email-already-in-use)." ? "Email already in use. Please try another one." : error.message));
+
+
 
     }
 
@@ -24,6 +78,7 @@ const SignUp = () => {
             <div>
                 <div className="hero bg-[#F3F4F6] p-28">
                     <div className="">
+                        <ToastContainer />
                         <div className="text-center text-[#374151]">
                             <h1 className="text-5xl font-bold mb-4">Join NestVibes</h1>
                             <p className="mb-10">Sign up to unlock exclusive features and find your dream home.</p>
@@ -35,26 +90,26 @@ const SignUp = () => {
                                         <span className="label-text text-xl font-semibold">Name</span>
 
                                     </label>
-                                    <input type="text" placeholder="Name" name="name" className="input input-bordered" required />
+                                    <input type="text" placeholder="Enter Name" name="name" className="input input-bordered placeholder:text-xs" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-xl font-semibold">Email</span>
                                     </label>
-                                    <input type="email" placeholder="Email" name="email" className="input input-bordered" required />
+                                    <input type="email" placeholder="Enter Valid Email" name="email" className="input input-bordered placeholder:text-xs" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-xl font-semibold">Photo URL</span>
                                     </label>
-                                    <input type="text" placeholder="Photo URL" name="photourl" className="input input-bordered" required />
+                                    <input type="text" placeholder="Enter photo URL (must be jpg, jpeg, png, gif, bmp, or webp)" name="photourl" className="input input-bordered placeholder:text-xs" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-xl font-semibold">Password</span>
                                     </label>
                                     <div className="relative">
-                                        <input type={showPassword ? "text" : "password"} placeholder="Password" name="password" className="input input-bordered w-full" required />
+                                        <input type={showPassword ? "text" : "password"} placeholder="Password: min 8 chars, contain uppercase & lowercase" name="password" className="input input-bordered w-full placeholder:text-xs" required />
                                         <span onClick={() => setShowPassword(!showPassword)} className='absolute top-4 right-1 mb-0 cursor-pointer'>
                                             {
                                                 showPassword ? <FaEyeSlash className="w-8" /> : <FaEye className="w-8" />
@@ -67,7 +122,7 @@ const SignUp = () => {
                                         <span className="label-text text-xl font-semibold">Confirm Password</span>
                                     </label>
                                     <div className="relative">
-                                        <input type={showConfirmPassword ? "text" : "password"} placeholder="Confirm Password" name="confirmpassword" className="input input-bordered w-full" required />
+                                        <input type={showConfirmPassword ? "text" : "password"} placeholder="Confirm Password" name="confirmpassword" className="input input-bordered w-full placeholder:text-xs" required />
                                         <span onClick={() => setShowConfirmPassword(!showConfirmPassword)} className='absolute top-4 right-1 mb-0 cursor-pointer'>
                                             {
                                                 showConfirmPassword ? <FaEyeSlash className="w-8" /> : <FaEye className="w-8" />
@@ -76,8 +131,8 @@ const SignUp = () => {
                                     </div>
                                 </div>
                                 <div className="mt-4 flex items-center">
-                                    <input className="h-5 w-5" type="checkbox" name="terms" id="terms" />
-                                    <label className="ml-2" htmlFor="terms">Accept our <a href="" className="font-medium">Terms and Conditions</a></label>
+                                    <input className="h-5 w-5" type="checkbox" name="terms" id="terms" required />
+                                    <label className="ml-2" htmlFor="terms">Accept our <span className="font-medium cursor-pointer">Terms and Conditions</span></label>
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="btn bg-[#111827] text-[#E5E7EB] hover:bg-[#374151] hover:text-[#F9FAFB] ">Sign Up</button>

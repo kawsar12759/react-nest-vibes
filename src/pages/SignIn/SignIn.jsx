@@ -1,25 +1,58 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../../providers/AuthProvider";
 
 const SignIn = () => {
+    const { signInWithEmail, user } = useContext(AuthContext);
+    const location = useLocation();
+    const showToast = location.state?.fromProtected;
+    useEffect(() => {
+        if (showToast) {
+          toast.info('Please sign in to gain full access.');
+          navigate('/signin', { replace: true, state: {} });
+        }
+      }, [showToast]);
+
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (user) {
+            navigate('/'); // Redirect to home page if user is logged in
+        }
+    }, [user, navigate]);
     const [showPassword, setShowPassword] = useState(false);
-    const handleSignIn = e =>{
+    const handleSignIn = e => {
         e.preventDefault();
 
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        console.log( email, password);
+
+
+        signInWithEmail(email, password)
+            .then(result => {
+                // Signed in 
+                console.log(result.user);
+
+            })
+            .catch((error) => {
+                toast.error(error.message === "Firebase: Error (auth/invalid-credential)." ? 'Invalid credentials! Please try again.' : error.message)
+                console.error(error.message);
+            });
+
+
     }
     return (
         <div>
             <div>
                 <div className="hero bg-[#F3F4F6] p-28">
                     <div className="">
+                        <ToastContainer />
                         <div className="text-center text-[#374151]">
                             <h1 className="text-5xl font-bold mb-4">Welcome to NestVibes</h1>
                             <p className="mb-10">Log in to access your personalized recommendations, and manage your account.</p>
@@ -54,7 +87,7 @@ const SignIn = () => {
                                 <div className="form-control mt-4">
                                     <button className="btn bg-[#111827] text-[#E5E7EB] hover:bg-[#374151] hover:text-[#F9FAFB] ">Sign In</button>
                                 </div>
-                                
+
                             </form>
                             <div className="card-body">
                                 <div className="flex items-center mb-4 w-3/4 mx-auto">
@@ -62,12 +95,10 @@ const SignIn = () => {
                                     <span className="mx-3 text-gray-500">or</span>
                                     <div className="w-full h-px bg-gray-300"></div>
                                 </div>
-                                <div className="mb-2">
-                                    <button className="btn bg-[#F9FAFB] text-[#111827] border-[#111827] hover:bg-[#374151] hover:text-[#F9FAFB] w-full"><FcGoogle className="text-2xl"/>Sign In with Google</button>
-                                </div>
                                 <div className="">
-                                    <button className="btn bg-[#F9FAFB] text-[#111827] border-[#111827] hover:bg-[#374151] hover:text-[#F9FAFB] w-full"><IoLogoGithub className="text-2xl"/>Sign In with GitHub</button>
+                                    <button className="btn bg-[#F9FAFB] text-[#111827] border-[#111827] hover:bg-[#374151] hover:text-[#F9FAFB] w-full"><FcGoogle className="text-2xl" />Sign In with Google</button>
                                 </div>
+
                                 <div className=" mt-4">
                                     <p className="text-center">Don't have an account? <Link className="font-semibold" to='/signup'>Sign Up</Link></p>
                                 </div>

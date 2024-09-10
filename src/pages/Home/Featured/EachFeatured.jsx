@@ -3,9 +3,11 @@ import bed from '../../../assets/bed.png';
 import bath from '../../../assets/bathroom.png';
 import areaPng from '../../../assets/area-chart.png';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 const EachFeatured = ({ property }) => {
 
-
+    const {user,setPrivateClicked} = useContext(AuthContext);
     const { id,image, estate_title, price, category, description, status, area, location, facilities, bedrooms, washrooms } = property;
 
     const getCategoryBgColor = () => {
@@ -28,6 +30,7 @@ const EachFeatured = ({ property }) => {
         }
 
     }
+
     return (
         <div className="border pb-6 rounded-md flex flex-col h-full shadow-md">
             <div className="relative">

@@ -1,16 +1,25 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Navbar = () => {
-
+    const { user, logOut } = useContext(AuthContext);
     const navLinks = <>
         <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/'>Home</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/about'>About Us</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/blogs'>Blog</NavLink></li>
+        {user &&<li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/blogs'>Blog</NavLink></li>}
         <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/reviews'>Reviews</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/updateprofile'>Update Profile</NavLink></li>
+        {user && <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/updateprofile'>Update Profile</NavLink></li>}
     </>
-
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                // Sign-out successful.
+            }).catch((error) => {
+                // An error happened.
+            });
+    }
     return (
         <div className="bg-[#111827] sticky text-[#E5E7EB] px-16 py-2 top-0 z-50">
             <div className="navbar">
@@ -44,15 +53,31 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-12 rounded-full">
-                            <img
-                                alt="Tailwind CSS Navbar component"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                    {user ?
+                        <div className="flex items-center">
+                            <p className="mr-4 text-lg font-medium">{user.displayName}</p>
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mr-4">
+                                <div className="">
+                                    <img
+                                        className="w-14 rounded-full"
+                                        alt={user.displayName}
+                                        src={user.photoURL}
+                                    />
+                                </div>
+
+                            </div>
+                            
+                            <button onClick={handleSignOut} className="btn bg-[#EF4444] text-[#FFFFFF] hover:bg-[#DC2626] px-6 py-3 rounded-md mr-5 font-semibold border-none">Sign Out</button>
                         </div>
-                    </div>
-                    <Link to='/signin'><button className="btn bg-[#FBBF24] text-[#111827] hover:bg-yellow-600 px-6 py-3 rounded-md mr-5 font-semibold border-none">Sign In</button></Link>
-                    <Link to='/signup'><button className="btn bg-[#EF4444] text-white hover:bg-red-600 px-6 py-3 rounded-md font-semibold border-none">Sign Up</button></Link>
+                        :
+                        <>
+                            <Link to='/signin'><button className="btn bg-[#FBBF24] text-[#111827] hover:bg-yellow-600 px-6 py-3 rounded-md mr-5 font-semibold border-none">Sign In</button></Link>
+                            <Link to='/signup'><button className="btn bg-[#0D9488] text-white hover:bg-[#0B7665] px-6 py-3 rounded-md font-semibold border-none">Sign Up</button></Link></>
+
+                    }
+
+
+
                 </div>
             </div>
         </div>
