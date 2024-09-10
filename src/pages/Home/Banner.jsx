@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import carouselImg1 from '../../assets/carouselImg1.jpg';
 import carouselImg2 from '../../assets/carouselImg2.jpg';
 import carouselImg3 from '../../assets/carouselImg3.jpg';

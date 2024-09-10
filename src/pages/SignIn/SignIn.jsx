@@ -9,23 +9,36 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../../providers/AuthProvider";
 
 const SignIn = () => {
-    const { signInWithEmail, user } = useContext(AuthContext);
+    const { signInWithEmail, user, signInWithGoogle } = useContext(AuthContext);
+    
     const location = useLocation();
+    const navigate = useNavigate();
     const showToast = location.state?.fromProtected;
+    const fromLogout = location.state?.fromLogout;
     useEffect(() => {
-        if (showToast) {
+        if (showToast && !fromLogout) {
           toast.info('Please sign in to gain full access.');
           navigate('/signin', { replace: true, state: {} });
         }
-      }, [showToast]);
+      }, [showToast, fromLogout, navigate]);
 
-    const navigate = useNavigate();
+    
     useEffect(() => {
         if (user) {
             navigate('/'); // Redirect to home page if user is logged in
         }
     }, [user, navigate]);
     const [showPassword, setShowPassword] = useState(false);
+
+    const handleGoogleSignIn =() =>{
+        signInWithGoogle()
+        .then(result=>{
+            console.log(result.user);
+        })
+        .catch(error=>{
+            toast.error(error.message);
+        })
+    }
     const handleSignIn = e => {
         e.preventDefault();
 
@@ -96,7 +109,7 @@ const SignIn = () => {
                                     <div className="w-full h-px bg-gray-300"></div>
                                 </div>
                                 <div className="">
-                                    <button className="btn bg-[#F9FAFB] text-[#111827] border-[#111827] hover:bg-[#374151] hover:text-[#F9FAFB] w-full"><FcGoogle className="text-2xl" />Sign In with Google</button>
+                                    <button onClick={handleGoogleSignIn} className="btn bg-[#F9FAFB] text-[#111827] border-[#111827] hover:bg-[#374151] hover:text-[#F9FAFB] w-full"><FcGoogle className="text-2xl" />Sign In with Google</button>
                                 </div>
 
                                 <div className=" mt-4">

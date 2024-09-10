@@ -16,7 +16,7 @@ const Reviews = () => {
 
   return (
     
-      <section className="py-12 bg-gray-100">
+      <section className="p-12 bg-gray-100">
         <div className="container mx-auto">
           <h2 className="text-center text-3xl font-bold mb-8">What Our Clients Say</h2>
 

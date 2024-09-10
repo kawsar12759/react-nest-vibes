@@ -25,14 +25,14 @@ const About = () => {
             <section className="py-20 bg-gray-100">
                 <div className="container mx-auto ">
 
-                    <div className='text-center px-28 mb-10'>
+                    <div className='text-center px-12 md:px-16 lg:px-28 mb-10'>
                         <h2 className="text-3xl font-bold">Our Mission</h2>
                         <p className="mt-4 text-gray-600">At NestVibes, we believe that finding a home is about more than just a transaction. It’s about finding a place where life happens. We are committed to connecting you with homes that fit your lifestyle and exceed your expectations.</p>
 
                     </div>
 
 
-                    <div className="grid grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 p-12">
 
                         <div className="text-center">
                             <div className="bg-teal-500 text-white p-4 rounded-full w-16 h-16 mx-auto">
@@ -116,7 +116,7 @@ const About = () => {
                 <div className="container mx-auto">
                     <h2 className="text-center text-3xl font-bold mb-8">Meet the Team</h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-10">
 
                         <div className="text-center">
                             <img src={teamMember1} alt="John Doe" className="rounded-full w-24 h-24 mx-auto mb-4" />
@@ -168,9 +168,9 @@ const About = () => {
                 </div>
             </section>
             <section className="py-12">
-                <div className="w-3/5 mx-auto flex justify-between">
+                <div className="lg:w-3/5 w-4/5 mx-auto flex justify-between">
 
-                    <div className='w-3/5 mr-5'>
+                    <div className='w-3/5  mr-5'>
                         <h2 className="text-3xl font-bold">Why Choose Us?</h2>
                         <p className="mt-4 text-gray-600">We understand that finding a home is one of the biggest decisions in life. Here’s why NestVibes is the perfect partner:</p>
                     </div>

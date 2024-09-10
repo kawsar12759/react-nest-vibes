@@ -12,7 +12,7 @@ const Blogs = () => {
         <section className="py-12 bg-gray-100">
             <div className="container mx-auto">
                 <h2 className="text-center text-3xl font-bold mb-8">Latest Blogs</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-10">
                     {blogs.map((blog) => (
                         <div key={blog.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
                             <img

@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDHlgtS9hPTNw8CqkYcCi_W1P3x9kIZmLk",
-  authDomain: "nest-vibes-b0e09.firebaseapp.com",
-  projectId: "nest-vibes-b0e09",
-  storageBucket: "nest-vibes-b0e09.appspot.com",
-  messagingSenderId: "505275848417",
-  appId: "1:505275848417:web:7e4828106b30f137af09a0"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain:import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
