@@ -5,6 +5,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 const SignUp = () => {
@@ -75,6 +76,9 @@ const SignUp = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>NestVibes | Sign Up</title>
+            </Helmet>
             <div>
                 <div className="hero bg-[#F3F4F6] p-28">
                     <div className="">

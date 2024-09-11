@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
     const { user, profileUpdate } = useContext(AuthContext);
@@ -33,8 +34,11 @@ const UpdateProfile = () => {
     };
 
     return (
-        user && (
+        
             <div>
+                <Helmet>
+                    <title>NestVibes | Update Profile</title>
+                </Helmet>
                 <div>
                     <div className="hero bg-[#F3F4F6] p-20">
                         <div>
@@ -44,7 +48,7 @@ const UpdateProfile = () => {
                             </div>
                             <div className="mb-8 w-full">
                                 <div className="flex justify-center mb-3">
-                                    <img className="w-28 h-28 rounded-full"  src={user.photoURL} alt="Profile" />
+                                    <img className="w-28 h-28 rounded-full" src={user.photoURL} alt="Profile" />
                                 </div>
                                 <p className="text-center text-2xl font-semibold">{user.displayName}</p>
                             </div>
@@ -105,7 +109,7 @@ const UpdateProfile = () => {
                     </div>
                 </div>
             </div>
-        )
+        
     );
 };
 

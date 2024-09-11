@@ -11,10 +11,14 @@ import teamMember4 from '../../assets/teamMember4.jpg';
 import teamMember5 from '../../assets/teamMember5.jpg';
 import teamMember6 from '../../assets/teamMember6.jpg';
 import checkPng from '../../assets/correct.png';
+import { Helmet } from 'react-helmet-async';
 const About = () => {
     return (
         <div>
             <section style={{ backgroundImage: `url(${backImg})`, backgroundSize: 'cover', height: '500px' }} className="relative h-96 bg-cover bg-center">
+                <Helmet>
+                    <title>NestVibes | About Us</title>
+                </Helmet>
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                     <div className="text-center text-white">
                         <h1 className="text-4xl font-bold">Welcome to NestVibes</h1>

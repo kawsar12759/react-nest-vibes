@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
@@ -19,6 +20,9 @@ const BlogDetails = () => {
     }
     return (
         <div className="container mx-auto p-12">
+            <Helmet>
+                <title>NestVibes | Blog Details</title>
+            </Helmet>
             <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
             <p className="text-gray-600 mb-8">By {blog.author} on {new Date(blog.date).toLocaleDateString()}</p>
             <img style={{ height: '600px' }}

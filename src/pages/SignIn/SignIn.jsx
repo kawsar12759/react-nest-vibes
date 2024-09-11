@@ -7,6 +7,7 @@ import { IoLogoGithub } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const SignIn = () => {
     const { signInWithEmail, user, signInWithGoogle, forgetPass } = useContext(AuthContext);
@@ -84,6 +85,9 @@ const SignIn = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>NestVibes | Sign In</title>
+            </Helmet>
             <div>
                 <div className="hero bg-[#F3F4F6] p-28">
                     <dialog id="my_modal_5" className="modal  modal-bottom sm:modal-middle">
