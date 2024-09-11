@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -9,20 +9,20 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../../providers/AuthProvider";
 
 const SignIn = () => {
-    const { signInWithEmail, user, signInWithGoogle } = useContext(AuthContext);
-    
+    const { signInWithEmail, user, signInWithGoogle, forgetPass } = useContext(AuthContext);
+    const emailRef = useRef();
     const location = useLocation();
     const navigate = useNavigate();
     const showToast = location.state?.fromProtected;
     const fromLogout = location.state?.fromLogout;
     useEffect(() => {
         if (showToast && !fromLogout) {
-          toast.info('Please sign in to gain full access.');
-          navigate('/signin', { replace: true, state: {} });
+            toast.info('Please sign in to gain full access.');
+            navigate('/signin', { replace: true, state: {} });
         }
-      }, [showToast, fromLogout, navigate]);
+    }, [showToast, fromLogout, navigate]);
 
-    
+
     useEffect(() => {
         if (user) {
             navigate('/'); // Redirect to home page if user is logged in
@@ -30,14 +30,14 @@ const SignIn = () => {
     }, [user, navigate]);
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleGoogleSignIn =() =>{
+    const handleGoogleSignIn = () => {
         signInWithGoogle()
-        .then(result=>{
-            console.log(result.user);
-        })
-        .catch(error=>{
-            toast.error(error.message);
-        })
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                toast.error(error.message);
+            })
     }
     const handleSignIn = e => {
         e.preventDefault();
@@ -60,10 +60,55 @@ const SignIn = () => {
 
 
     }
+    const handleForgetPass = e => {
+        const emailForReset = emailRef.current.value;
+        console.log(emailForReset);
+        if (emailForReset === '') {
+            console.log('Returned');
+            return;
+        }
+
+
+        forgetPass(emailForReset)
+            .then(() => {
+                // Password reset email sent!
+                // ..\
+                toast.info('A password reset link has been sent to your email.');
+            })
+            .catch((error) => {
+
+                // ..
+            });
+
+
+    }
     return (
         <div>
             <div>
                 <div className="hero bg-[#F3F4F6] p-28">
+                    <dialog id="my_modal_5" className="modal  modal-bottom sm:modal-middle">
+
+                        <div className="modal-box">
+                            <h1 className="text-2xl font-semibold mb-4">Reset Password</h1>
+                            <hr className="text-black mb-3" />
+                            <form method="dialog" >
+                                <div className="form-control mb-4">
+                                    <label className="label mb-4">
+                                        <span className="label-text text-base font-medium">Enter the email associated with your account to receive a password reset link</span>
+                                    </label>
+                                    <input type="email" name="emailforreset" ref={emailRef} placeholder="Enter Your Email" className="input input-bordered mb-3" />
+
+                                </div>
+                                <hr className="mb-3" />
+                                <div className="flex justify-end">
+                                    <button className="btn bg-[#F3F4F6] text-[#374151] hover:bg-[#E5E7EB] hover:text-[#111827] mr-3">Cancel</button>
+                                    <button onClick={handleForgetPass} className="btn bg-[#111827] text-[#E5E7EB] hover:bg-[#374151] hover:text-[#F9FAFB]">Reset Password</button>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </dialog>
                     <div className="">
                         <ToastContainer />
                         <div className="text-center text-[#374151]">
@@ -92,8 +137,8 @@ const SignIn = () => {
                                         </span>
                                     </div>
                                 </div>
-                                <div>
-                                    <p className="text-right">Forgotten Password?</p>
+                                <div className="flex justify-end">
+                                    <span onClick={() => document.getElementById('my_modal_5').showModal()} className=" font-medium hover:font-semibold hover:underline cursor-pointer">Forgotten Password?</span>
                                 </div>
 
 
