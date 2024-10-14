@@ -80,7 +80,7 @@ const SignUp = () => {
                 <title>NestVibes | Sign Up</title>
             </Helmet>
             <div>
-                <div className="hero bg-[#F3F4F6] p-28">
+                <div className="hero bg-[#F3F4F6] p-6 sm:p-28">
                     <div className="">
                         <ToastContainer />
                         <div className="text-center text-[#374151]">

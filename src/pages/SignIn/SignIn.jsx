@@ -89,8 +89,8 @@ const SignIn = () => {
                 <title>NestVibes | Sign In</title>
             </Helmet>
             <div>
-                <div className="hero bg-[#F3F4F6] p-28">
-                    <dialog id="my_modal_5" className="modal  modal-bottom sm:modal-middle">
+                <div className="hero  bg-[#F3F4F6] p-6 sm:p-28">
+                    <dialog id="my_modal_5" className="modal w-4/5 mx-auto  modal-bottom sm:modal-middle">
 
                         <div className="modal-box">
                             <h1 className="text-2xl font-semibold mb-4">Reset Password</h1>
@@ -119,7 +119,7 @@ const SignIn = () => {
                             <h1 className="text-5xl font-bold mb-4">Welcome to NestVibes</h1>
                             <p className="mb-10">Log in to access your personalized recommendations, and manage your account.</p>
                         </div>
-                        <div className="card max-w-lg mx-auto bg-[#F9FAFB] border border-[#E5E7EB] w-full shadow-2xl">
+                        <div className="card max-w-lg  mx-auto bg-[#F9FAFB] border border-[#E5E7EB] shadow-2xl">
                             <form onSubmit={handleSignIn} className="card-body mb-0 pb-0">
 
                                 <div className="form-control">

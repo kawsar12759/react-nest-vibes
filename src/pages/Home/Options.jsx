@@ -5,7 +5,7 @@ import vacationRentalsImg from '../../assets/resort.png';
 
 const Options = () => {
     return (
-        <div className="py-10 px-24">
+        <div className="py-10 px-12 sm:px-24">
             <h3 className="text-3xl font-semibold text-center mb-8">What Are You Looking For?</h3>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
                 <div className='flex items-start justify-center h-full  p-8'>

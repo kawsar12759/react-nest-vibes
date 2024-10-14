@@ -40,7 +40,7 @@ const UpdateProfile = () => {
                     <title>NestVibes | Update Profile</title>
                 </Helmet>
                 <div>
-                    <div className="hero bg-[#F3F4F6] p-20">
+                    <div className="hero mx-auto bg-[#F3F4F6] p-8 sm:p-20">
                         <div>
                             <div className="text-center text-[#374151]">
                                 <h1 className="text-5xl font-bold mb-4">Update Your Profile</h1>

@@ -6,7 +6,7 @@ import carouselImg4 from '../../assets/carouselImg4.png';
 
 const Banner = () => {
 
-    
+
     return (
         <div>
             <div className="carousel w-full">
@@ -16,8 +16,8 @@ const Banner = () => {
                         className="w-full" />
                     <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end px-16 md:px-32 lg:px-48 py-8 bg-gradient-to-b from-transparent to-gray-900 bg-opacity-75">
                         <h2 className="text-4xl text-white font-bold text-center mb-5">Find Your Perfect Home with NestVibes</h2>
-                        <p className="text-lg text-gray-200 mt-2 text-center mb-4">
-                            Discover a world of exceptional living spaces tailored to your needs. Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
+                        <p className=" text-lg text-gray-200 mt-2 text-center mb-4">
+                            Discover a world of exceptional living spaces tailored to your needs. <span className='sm:inline-block hidden'> Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. </span>Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
                         </p>
                         <div className='flex justify-center font-medium'>
                             <button className="btn border-none bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</button>
@@ -35,8 +35,8 @@ const Banner = () => {
                         className="w-full" />
                     <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end px-16 md:px-32 lg:px-48 py-8 bg-gradient-to-b from-transparent to-gray-900 bg-opacity-75">
                         <h2 className="text-4xl text-white font-bold text-center mb-5">Find Your Perfect Home with NestVibes</h2>
-                        <p className="text-lg text-gray-200 mt-2 text-center mb-4">
-                            Discover a world of exceptional living spaces tailored to your needs. Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
+                        <p className=" text-lg text-gray-200 mt-2 text-center mb-4">
+                            Discover a world of exceptional living spaces tailored to your needs. <span className='sm:inline-block hidden'> Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. </span>Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
                         </p>
                         <div className='flex justify-center font-medium'>
                             <button className="btn border-none bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</button>
@@ -55,7 +55,7 @@ const Banner = () => {
                     <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end px-16 md:px-32 lg:px-48 py-8 bg-gradient-to-b from-transparent to-gray-900 bg-opacity-75">
                         <h2 className="text-4xl text-white font-bold text-center mb-5">Find Your Perfect Home with NestVibes</h2>
                         <p className="text-lg text-gray-200 mt-2 text-center mb-4">
-                            Discover a world of exceptional living spaces tailored to your needs. Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
+                            Discover a world of exceptional living spaces tailored to your needs. <span className='sm:inline-block hidden'> Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. </span>Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
                         </p>
                         <div className='flex justify-center font-medium'>
                             <button className="btn border-none bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</button>
@@ -75,7 +75,7 @@ const Banner = () => {
                     <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end px-16 md:px-32 lg:px-48 py-8 bg-gradient-to-b from-transparent to-gray-900 bg-opacity-75">
                         <h2 className="text-4xl text-white font-bold text-center mb-5">Find Your Perfect Home with NestVibes</h2>
                         <p className="text-lg text-gray-200 mt-2 text-center mb-4">
-                            Discover a world of exceptional living spaces tailored to your needs. Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
+                            Discover a world of exceptional living spaces tailored to your needs. <span className='sm:inline-block hidden'> Whether you're searching for a cozy apartment, a spacious family home, or a charming vacation rental, NestVibes is here to help you find the ideal place. </span>Explore our diverse property listings, connect with us, and start your journey to finding a home that truly feels like yours.
                         </p>
                         <div className='flex justify-center font-medium'>
                             <button className="btn border-none bg-[#0D9488] text-white py-3 px-5 rounded hover:bg-[#0F766E]">View Listing</button>
