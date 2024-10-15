@@ -53,7 +53,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost text-2xl">NestVibes</Link>
+                    <Link className="font-semibold text-xl xs:text-2xl">NestVibes</Link>
                 </div>
                 <div className="navbar-center hidden xl:flex">
                     <ul className="menu menu-horizontal px-1 font-medium">

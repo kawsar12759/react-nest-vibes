@@ -102,16 +102,16 @@ const PropertyDetails = () => {
                 </div>
 
                 {/* CTA Section */}
-                <div className="bg-white p-8 rounded-lg shadow-md md:flex md:justify-between md:items-center">
+                <div className="bg-white p-6 xs:p-8 rounded-lg shadow-md md:flex md:justify-between md:items-center">
                     <h3 className="text-xl sm:text-2xl font-bold mb-5 md:mb-0 text-black">Interested in this property?</h3>
-                    <div className="space-x-4">
+                    <div className="flex space-x-4">
                         <button
-                            className="btn bg-blue-500 border-none text-white py-2 sm:py-3 px-6 rounded-lg hover:bg-blue-600"
+                            className="btn bg-blue-500 border-none text-white py-2 sm:py-3 px-3 xs:px-6 rounded-lg hover:bg-blue-600"
                         >
                             Contact Us
                         </button>
                         <button
-                            className="btn bg-yellow-500 border-none text-black py-2 sm:py-3 px-6 rounded-lg hover:bg-yellow-600"
+                            className="btn  bg-yellow-500 border-none text-black py-2 sm:py-3 px-3 xs:px-6 rounded-lg hover:bg-yellow-600"
                         >
                             View Listing
                         </button>

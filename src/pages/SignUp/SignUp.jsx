@@ -84,33 +84,33 @@ const SignUp = () => {
                     <div className="">
                         <ToastContainer />
                         <div className="text-center text-[#374151]">
-                            <h1 className="text-4xl sm:text-5xl font-bold mb-4">Join NestVibes</h1>
+                            <h1 className="text-3xl xs:text-4xl sm:text-5xl font-bold mb-4">Join NestVibes</h1>
                             <p className="mb-10">Sign up to unlock exclusive features and find your dream home.</p>
                         </div>
                         <div className="card bg-[#F9FAFB] border border-[#E5E7EB] w-full shadow-2xl">
                             <form className="card-body" onSubmit={handleSignUp}>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text text-xl font-semibold text-black">Name</span>
+                                        <span className="label-text text-lg xs:text-xl font-semibold text-black">Name</span>
 
                                     </label>
                                     <input type="text" placeholder="Enter Name" name="name" className="input input-bordered placeholder:text-xs bg-white" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text text-xl font-semibold text-black">Email</span>
+                                        <span className="label-text text-lg xs:text-xl font-semibold text-black">Email</span>
                                     </label>
                                     <input type="email" placeholder="Enter Valid Email" name="email" className="input input-bordered placeholder:text-xs bg-white" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text text-xl font-semibold text-black">Photo URL</span>
+                                        <span className="label-text text-lg xs:text-xl font-semibold text-black">Photo URL</span>
                                     </label>
                                     <input type="text" placeholder="Enter photo URL (must be jpg, jpeg, png, gif, bmp, or webp)" name="photourl" className="input input-bordered placeholder:text-xs bg-white" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text text-xl font-semibold text-black">Password</span>
+                                        <span className="label-text text-lg xs:text-xl font-semibold text-black">Password</span>
                                     </label>
                                     <div className="relative">
                                         <input type={showPassword ? "text" : "password"} placeholder="Password: min 8 chars, contain uppercase & lowercase" name="password" className="input input-bordered w-full placeholder:text-xs bg-white" required />
@@ -123,7 +123,7 @@ const SignUp = () => {
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text text-xl font-semibold text-black">Confirm Password</span>
+                                        <span className="label-text text-lg xs:text-xl font-semibold text-black">Confirm Password</span>
                                     </label>
                                     <div className="relative">
                                         <input type={showConfirmPassword ? "text" : "password"} placeholder="Confirm Password" name="confirmpassword" className="input input-bordered w-full placeholder:text-xs bg-white" required />
@@ -136,13 +136,13 @@ const SignUp = () => {
                                 </div>
                                 <div className="mt-4 flex items-center">
                                     <input className="h-5 w-5 bg-white " type="checkbox" name="terms" id="terms" required />
-                                    <label className="ml-2 text-black" htmlFor="terms">Accept our <span className="font-medium cursor-pointer">Terms and Conditions</span></label>
+                                    <label className="ml-2 text-sm xs:text-base text-black" htmlFor="terms">Accept our <span className="font-medium cursor-pointer">Terms and Conditions</span></label>
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="btn bg-[#111827] text-[#E5E7EB] hover:bg-[#374151] hover:text-[#F9FAFB] ">Sign Up</button>
                                 </div>
                                 <div className=" mt-3">
-                                    <p className="text-center text-black">Already have an account? <Link className="font-semibold" to='/signin'>Sign In</Link></p>
+                                    <p className="text-center text-sm xs:text-base text-black">Already have an account? <Link className="font-semibold" to='/signin'>Sign In</Link></p>
                                 </div>
                             </form>
 

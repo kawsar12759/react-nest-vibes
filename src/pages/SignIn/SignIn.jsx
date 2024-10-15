@@ -90,15 +90,15 @@ const SignIn = () => {
             </Helmet>
             <div>
                 <div className="hero  bg-[#F3F4F6] p-6 sm:p-28">
-                    <dialog id="my_modal_5" className="modal w-4/5 mx-auto   modal-middle">
+                    <dialog id="my_modal_5" className="modal xs:w-4/5 mx-auto   modal-middle">
 
                         <div className="modal-box bg-[#FFFFFF] ">
-                            <h1 className="text-xl sm:text-2xl font-semibold mb-4">Reset Password</h1>
+                            <h1 className="text-lg xs:text-xl sm:text-2xl font-semibold mb-4">Reset Password</h1>
                             <hr className="text-black mb-3" />
                             <form method="dialog" >
                                 <div className="form-control mb-4">
                                     <label className="label mb-4">
-                                        <span className="label-text text-base font-medium">Enter the email associated with your account to receive a password reset link</span>
+                                        <span className="label-text text-sm xs:text-base font-medium">Enter the email associated with your account to receive a password reset link</span>
                                     </label>
                                     <input type="email" name="emailforreset" ref={emailRef} placeholder="Enter Your Email" className="input input-bordered mb-3 bg-white" />
 
@@ -116,7 +116,7 @@ const SignIn = () => {
                     <div className="">
                         <ToastContainer />
                         <div className="text-center text-[#374151]">
-                            <h1 className="text-4xl sm:text-5xl font-bold mb-4">Welcome to NestVibes</h1>
+                            <h1 className="text-3xl xs:text-4xl sm:text-5xl font-bold mb-4">Welcome to NestVibes</h1>
                             <p className="mb-10">Log in to access your personalized recommendations, and manage your account.</p>
                         </div>
                         <div className="card max-w-lg  mx-auto bg-[#F9FAFB] border border-[#E5E7EB] shadow-2xl">
@@ -124,13 +124,13 @@ const SignIn = () => {
 
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text text-xl font-semibold text-black">Email</span>
+                                        <span className="label-text text-lg xs:text-xl font-semibold text-black">Email</span>
                                     </label>
                                     <input type="email" placeholder="Email" name="email" className="input input-bordered bg-white" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text text-xl font-semibold text-black
+                                        <span className="label-text text-lg xs:text-xl font-semibold text-black
                                         ">Password</span>
                                     </label>
                                     <div className="relative">
@@ -143,7 +143,7 @@ const SignIn = () => {
                                     </div>
                                 </div>
                                 <div className="flex justify-end">
-                                    <span onClick={() => document.getElementById('my_modal_5').showModal()} className=" font-medium hover:font-semibold hover:underline cursor-pointer text-black">Forgotten Password?</span>
+                                    <span onClick={() => document.getElementById('my_modal_5').showModal()} className=" font-medium hover:font-semibold text-sm xs:text-base hover:underline cursor-pointer text-black">Forgotten Password?</span>
                                 </div>
 
 
@@ -163,7 +163,7 @@ const SignIn = () => {
                                 </div>
 
                                 <div className=" mt-4 text-black">
-                                    <p className="text-center">Don't have an account? <Link className="font-semibold" to='/signup'>Sign Up</Link></p>
+                                    <p className="text-center text-sm xs:text-base">Don't have an account? <Link className="font-semibold" to='/signup'>Sign Up</Link></p>
                                 </div>
                             </div>
 

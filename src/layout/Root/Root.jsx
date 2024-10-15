@@ -5,7 +5,7 @@ import Footer from "../../shared/Footer/Footer";
 
 const Root = () => {
     return (
-        <div style={{minWidth:'400px'}}>
+        <div style={{minWidth:'350px'}}>
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

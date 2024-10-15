@@ -43,20 +43,20 @@ const UpdateProfile = () => {
                     <div className="hero mx-auto bg-[#F3F4F6] p-8 sm:p-20">
                         <div>
                             <div className="text-center text-[#374151]">
-                                <h1 className="text-4xl sm:text-5xl font-bold mb-4">Update Your Profile</h1>
+                                <h1 className="text-3xl xs:text-4xl sm:text-5xl font-bold mb-4">Update Your Profile</h1>
                                 <p className="mb-10">Manage your personal details to keep your profile up-to-date.</p>
                             </div>
                             <div className="mb-8 w-full">
                                 <div className="flex justify-center mb-3">
                                     <img className="w-28 h-28 rounded-full" src={user.photoURL} alt="Profile" />
                                 </div>
-                                <p className="text-center text-2xl font-semibold text-black">{user.displayName}</p>
+                                <p className="text-center text-xl xs:text-2xl font-semibold text-black">{user.displayName}</p>
                             </div>
                             <div className="card  bg-[#F9FAFB] border border-[#E5E7EB] w-full  shadow-2xl">
                                 <form className="card-body" onSubmit={handleUpdateProfile}>
                                     <div className="form-control">
                                         <label className="label">
-                                            <span className="label-text text-xl font-semibold text-black">Name</span>
+                                            <span className="label-text text-lg xs:text-xl font-semibold text-black">Name</span>
                                         </label>
                                         <input
                                             type="text"
@@ -70,7 +70,7 @@ const UpdateProfile = () => {
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
-                                            <span className="label-text text-xl font-semibold text-black">Email</span>
+                                            <span className="label-text text-lg xs:text-xl font-semibold text-black">Email</span>
                                         </label>
                                         <input
                                             type="email"
@@ -83,7 +83,7 @@ const UpdateProfile = () => {
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
-                                            <span className="label-text text-xl font-semibold text-black">Photo URL</span>
+                                            <span className="label-text text-lg xs:text-xl font-semibold text-black">Photo URL</span>
                                         </label>
                                         <input
                                             type="text"

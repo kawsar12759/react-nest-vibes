@@ -8,7 +8,7 @@ const Featured = () => {
 
     const allProperties = useLoaderData();
     return (
-        <div className="py-24 px-10 xs:px-20 bg-white text-black">
+        <div className="py-24 px-6 xs:px-20 bg-white text-black">
             <h3 className="text-3xl font-semibold mb-10 text-center ">Featured</h3>
             <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3  gap-8">
                 {

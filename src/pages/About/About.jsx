@@ -172,9 +172,9 @@ const About = () => {
                 </div>
             </section>
             <section className="py-12 bg-white text-black">
-                <div className="lg:w-3/5 w-4/5 mx-auto flex justify-between">
+                <div className="lg:w-3/5 w-4/5 mx-auto ssm:flex justify-between">
 
-                    <div className='w-3/5  mr-5'>
+                    <div className='sm:w-3/5  sm:mr-5 mb-4 sm:mb-0'>
                         <h2 className="text-2xl sm:text-3xl font-bold">Why Choose Us?</h2>
                         <p className="mt-4 text-gray-600">We understand that finding a home is one of the biggest decisions in life. Here’s why NestVibes is the perfect partner:</p>
                     </div>
