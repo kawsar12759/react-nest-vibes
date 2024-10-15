@@ -10,7 +10,7 @@ const Blogs = () => {
             .then(data => setBlogs(data));
     }, [])
     return (
-        <section className="py-12 bg-gray-100">
+        <section className="py-12 bg-gray-100 text-black">
             <Helmet>
                 <title>NestVibes | Blogs</title>
             </Helmet>

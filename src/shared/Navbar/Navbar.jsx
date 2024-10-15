@@ -29,7 +29,7 @@ const Navbar = () => {
             });
     }
     return (
-        <div className="bg-[#111827] sticky text-[#E5E7EB] px-6 md:px-16 py-2 top-0 z-50">
+        <div className="bg-[#111827] sticky text-[#E5E7EB] px-4 md:px-16 py-2 top-0 z-50">
             <div className="navbar">
                 <div className="navbar-start w-fit xl:w-full ">
                     <div className="dropdown">
@@ -49,7 +49,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 text-[#111827] rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="bg-white menu menu-sm dropdown-content bg-base-100 text-[#111827] rounded-box z-[1] mt-3 w-52  p-2 shadow">
                             {navLinks}
                         </ul>
                     </div>

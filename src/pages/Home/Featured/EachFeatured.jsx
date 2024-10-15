@@ -32,7 +32,7 @@ const EachFeatured = ({ property }) => {
     }
 
     return (
-        <div className="border pb-6 rounded-md flex flex-col h-full shadow-md">
+        <div className="border pb-6 rounded-md flex flex-col h-full shadow-md ">
             <div className="relative">
                 <img className="h-64 w-full" src={image} alt="" />
                 <div className="absolute flex items-center bottom-1 pl-4">
@@ -63,7 +63,7 @@ const EachFeatured = ({ property }) => {
                         <p>{area}</p>
                     </div>
                 </div>
-                <Link to={`/property/${id}`}><button className="btn bg-[#34D399] hover:bg-[#10B981] mt-1 sm:mt-0 rounded-none">View Details</button></Link>
+                <Link to={`/property/${id}`}><button className="btn bg-[#34D399] text-black border-none hover:bg-[#10B981] mt-1 sm:mt-0 rounded-none">View Details</button></Link>
             </div>
 
         </div>

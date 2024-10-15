@@ -19,11 +19,12 @@ const BlogDetails = () => {
         </div>;
     }
     return (
-        <div className="container mx-auto p-12">
+        <div className="bg-white text-black">
+            <div className="container mx-auto p-6 sm:p-12">
             <Helmet>
                 <title>NestVibes | Blog Details</title>
             </Helmet>
-            <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-4">{blog.title}</h1>
             <p className="text-gray-600 mb-8">By {blog.author} on {new Date(blog.date).toLocaleDateString()}</p>
             <img style={{ height: '600px' }}
                 src={blog.imageUrl}
@@ -33,6 +34,7 @@ const BlogDetails = () => {
             <div className="prose">
                 <p>{blog.content}</p>
             </div>
+        </div>
         </div>
     );
 };

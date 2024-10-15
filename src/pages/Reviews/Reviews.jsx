@@ -17,7 +17,7 @@ const Reviews = () => {
 
   return (
 
-    <section className="p-12 bg-gray-100">
+    <section className="p-12 bg-gray-100 text-black">
       <Helmet>
         <title>NestVibes | Reviews</title>
       </Helmet>

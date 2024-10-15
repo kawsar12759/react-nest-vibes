@@ -21,22 +21,22 @@ const About = () => {
                 </Helmet>
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                     <div className="text-center text-white">
-                        <h1 className="text-4xl font-bold">Welcome to NestVibes</h1>
-                        <p className="mt-2 text-lg">Your Partner in Finding the Perfect Home</p>
+                        <h1 className="text-3xl sm:text-4xl font-bold">Welcome to NestVibes</h1>
+                        <p className="mt-2 text-md sm:text-lg">Your Partner in Finding the Perfect Home</p>
                     </div>
                 </div>
             </section>
-            <section className="py-20 bg-gray-100">
+            <section className="py-20 bg-gray-100 text-black">
                 <div className="container mx-auto ">
 
                     <div className='text-center px-12 md:px-16 lg:px-28 mb-10'>
-                        <h2 className="text-3xl font-bold">Our Mission</h2>
+                        <h2 className="text-2xl sm:text-3xl font-bold">Our Mission</h2>
                         <p className="mt-4 text-gray-600">At NestVibes, we believe that finding a home is about more than just a transaction. It’s about finding a place where life happens. We are committed to connecting you with homes that fit your lifestyle and exceed your expectations.</p>
 
                     </div>
 
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 p-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 p-12 ">
 
                         <div className="text-center">
                             <div className="bg-teal-500 text-white p-4 rounded-full w-16 h-16 mx-auto">
@@ -80,7 +80,7 @@ const About = () => {
                 </div>
             </section>
 
-            <section className="py-12 px-6">
+            <section className="py-12 px-6 bg-white text-black">
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
 
                     <div className="relative h-full">
@@ -90,7 +90,7 @@ const About = () => {
 
                     <div className='flex items-center'>
                         <div>
-                            <h2 className="text-3xl font-bold">Our Story</h2>
+                            <h2 className="text-2xl sm:text-3xl font-bold">Our Story</h2>
                             <p className="mt-4 text-gray-600">NestVibes was founded by a team of real estate enthusiasts with a vision to revolutionize the home-buying and renting experience. Our journey began with a single office and a passion for helping people find their ideal homes.</p>
 
 
@@ -116,9 +116,9 @@ const About = () => {
                     </div>
                 </div>
             </section>
-            <section className="py-12 bg-gray-100">
+            <section className="py-12 bg-gray-100 text-black">
                 <div className="container mx-auto">
-                    <h2 className="text-center text-3xl font-bold mb-8">Meet the Team</h2>
+                    <h2 className="text-center text-2xl sm:text-3xl font-bold mb-8">Meet the Team</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-10">
 
@@ -171,11 +171,11 @@ const About = () => {
                     </div>
                 </div>
             </section>
-            <section className="py-12">
+            <section className="py-12 bg-white text-black">
                 <div className="lg:w-3/5 w-4/5 mx-auto flex justify-between">
 
                     <div className='w-3/5  mr-5'>
-                        <h2 className="text-3xl font-bold">Why Choose Us?</h2>
+                        <h2 className="text-2xl sm:text-3xl font-bold">Why Choose Us?</h2>
                         <p className="mt-4 text-gray-600">We understand that finding a home is one of the biggest decisions in life. Here’s why NestVibes is the perfect partner:</p>
                     </div>
 
