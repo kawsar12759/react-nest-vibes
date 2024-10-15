@@ -1,14 +1,13 @@
 import { FaLocationDot } from "react-icons/fa6";
 import bed from '../../../assets/bed.png';
 import bath from '../../../assets/bathroom.png';
-import areaPng from '../../../assets/area-chart.png';
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 const EachFeatured = ({ property }) => {
 
     const { user, setPrivateClicked } = useContext(AuthContext);
-    const { id, image, estate_title, price, category, description, status, area, location, facilities, bedrooms, washrooms } = property;
+    const { id, image, estate_title, price, category, description, status,  location, facilities, bedrooms, washrooms } = property;
 
     const getCategoryBgColor = () => {
         if (category === "Apartment") {
@@ -50,18 +49,16 @@ const EachFeatured = ({ property }) => {
                 <h6 className="px-4 mt-1 text-[#10B981] text-xl font-semibold ">{price}</h6>
                 <p className="px-4 mt-2 text-base">{description}</p>
             </div>
-            <div className="px-4 sm:flex justify-between items-center">
-                <div className="sm:flex font-medium text-[#747272]">
+            <div className="px-4 flex justify-between items-center">
+                <div className="font-medium text-[#747272]">
+                    
                     <div className="flex">
                         <img className="w-6 h-6 mr-2" src={bed} alt="" />
                         <p className="mr-4">{bedrooms}</p>
                         <img className="w-6 h-6 mr-2" src={bath} alt="" />
                         <p className="mr-4">{washrooms}</p>
                     </div>
-                    <div className="flex my-2 sm:mt-0">
-                        <img className="w-6 h-6 mr-2" src={areaPng} alt="" />
-                        <p>{area}</p>
-                    </div>
+
                 </div>
                 <Link to={`/property/${id}`}><button className="btn bg-[#34D399] text-black border-none hover:bg-[#10B981] mt-1 sm:mt-0 rounded-none">View Details</button></Link>
             </div>

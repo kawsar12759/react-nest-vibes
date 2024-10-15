@@ -1,6 +1,7 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import bed from '../../assets/bed.png';
 import bath from '../../assets/bathroom.png';
+import areaPng from '../../assets/area-chart.png';
 import { Helmet } from "react-helmet-async";
 
 const PropertyDetails = () => {
@@ -55,7 +56,10 @@ const PropertyDetails = () => {
                             <img className="w-8 h-6 mr-2" src={bed} alt="" />
                             <p className="mr-10">{property.bedrooms}</p>
                             <img className="w-8 h-6 mr-2" src={bath} alt="" />
-                            <p className="mr-4">{property.washrooms}</p>
+                            <p className="mr-10">{property.washrooms}</p>
+
+                            <img className="w-8 h-6 mr-2" src={areaPng} alt="" />
+                            <p>{property.area}</p>
 
                         </div>
                     </div>
