@@ -1,0 +1,15 @@
+{
+  "heroStreet": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840478/nest-vibes/site/heroStreet.jpg",
+  "heroTower": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840479/nest-vibes/site/heroTower.jpg",
+  "heroModern": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840480/nest-vibes/site/heroModern.jpg",
+  "heroVilla": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840480/nest-vibes/site/heroVilla.png",
+  "family": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840481/nest-vibes/site/family.png",
+  "story": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840482/nest-vibes/site/story.jpg",
+  "aboutHero": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840483/nest-vibes/site/aboutHero.png",
+  "team1": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840484/nest-vibes/site/team1.jpg",
+  "team2": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840485/nest-vibes/site/team2.jpg",
+  "team3": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840486/nest-vibes/site/team3.jpg",
+  "team4": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840487/nest-vibes/site/team4.jpg",
+  "team5": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840488/nest-vibes/site/team5.jpg",
+  "team6": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789840489/nest-vibes/site/team6.jpg"
+}

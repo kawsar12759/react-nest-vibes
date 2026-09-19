@@ -1,0 +1,751 @@
+[
+  {
+    "id": "1",
+    "title": "Spacious Family Home",
+    "description": "A large family home with ample space and a beautiful backyard.",
+    "category": "Apartment",
+    "status": "Sale",
+    "price": 750000,
+    "priceUnit": "total",
+    "area": 2400,
+    "location": "Houston, TX",
+    "facilities": [
+      "Living Room",
+      "Garden",
+      "Garage",
+      "Kitchen"
+    ],
+    "bedrooms": 4,
+    "washrooms": 3,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789838678/nest-vibes/seed/property-1.jpg",
+        "publicId": "nest-vibes/seed/property-1",
+        "width": 991,
+        "height": 660
+      }
+    ],
+    "reviews": [
+      {
+        "name": "John Doe",
+        "comment": "Beautiful home with plenty of space for my family. Loved the garden.",
+        "rating": 4.5
+      },
+      {
+        "name": "Jane Smith",
+        "comment": "Spacious rooms and great amenities, but the garage could be bigger.",
+        "rating": 4
+      },
+      {
+        "name": "Robert Brown",
+        "comment": "Amazing location and a perfect home for a family. Highly recommended.",
+        "rating": 4.7
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "Modern Studio Apartment",
+    "description": "A sleek studio apartment with contemporary design and central location.",
+    "category": "Apartment",
+    "status": "Rent",
+    "price": 900,
+    "priceUnit": "month",
+    "area": 600,
+    "location": "San Francisco, CA",
+    "facilities": [
+      "Living Room",
+      "Kitchen",
+      "Bathroom"
+    ],
+    "bedrooms": 1,
+    "washrooms": 1,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789838704/nest-vibes/seed/property-2.jpg",
+        "publicId": "nest-vibes/seed/property-2",
+        "width": 626,
+        "height": 351
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Alice Johnson",
+        "comment": "Great location and design. Perfect for a single person.",
+        "rating": 4.8
+      },
+      {
+        "name": "Mark Evans",
+        "comment": "Beautifully designed apartment. Loved the layout and amenities.",
+        "rating": 4.6
+      },
+      {
+        "name": "Emma Clark",
+        "comment": "Compact but efficient. Great location, but a bit noisy.",
+        "rating": 4.2
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-09-04T00:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "title": "Cozy Studio Apartment",
+    "description": "A compact, cozy studio with efficient use of space and modern finishes.",
+    "category": "Apartment",
+    "status": "Rent",
+    "price": 850,
+    "priceUnit": "month",
+    "area": 400,
+    "location": "Boston, MA",
+    "facilities": [
+      "Living Room",
+      "Kitchen",
+      "Bathroom"
+    ],
+    "bedrooms": 1,
+    "washrooms": 1,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789838705/nest-vibes/seed/property-3.jpg",
+        "publicId": "nest-vibes/seed/property-3",
+        "width": 600,
+        "height": 400
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Mark Wilson",
+        "comment": "Very cozy and well-located. The kitchen could be bigger.",
+        "rating": 4.2
+      },
+      {
+        "name": "Rachel Green",
+        "comment": "Perfect for students or a single person. I enjoyed my stay here.",
+        "rating": 4.3
+      },
+      {
+        "name": "Daniel Lee",
+        "comment": "Nice and compact. Everything is within easy reach. Good price for Boston.",
+        "rating": 4.1
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-09-07T00:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "title": "Modern Student Suite",
+    "description": "An updated student suite with convenient access to university facilities.",
+    "category": "Student Housing",
+    "status": "Rent",
+    "price": 550,
+    "priceUnit": "month",
+    "area": 500,
+    "location": "Ann Arbor, MI",
+    "facilities": [
+      "Living Room",
+      "Study Area",
+      "Kitchen",
+      "Laundry"
+    ],
+    "bedrooms": 1,
+    "washrooms": 1,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789838748/nest-vibes/seed/property-4.jpg",
+        "publicId": "nest-vibes/seed/property-4",
+        "width": 1920,
+        "height": 1280
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Sophia Green",
+        "comment": "Affordable and close to campus, perfect for students.",
+        "rating": 4.7
+      },
+      {
+        "name": "Mike Turner",
+        "comment": "Clean and modern. The study area is a great addition for students.",
+        "rating": 4.5
+      },
+      {
+        "name": "Jessica Adams",
+        "comment": "Convenient location, but the kitchen was a bit small.",
+        "rating": 4.2
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-09-10T00:00:00.000Z"
+  },
+  {
+    "id": "5",
+    "title": "Charming Cottage",
+    "description": "A quaint cottage with a cozy interior and beautiful garden.",
+    "category": "Vacation Rental",
+    "status": "Rent",
+    "price": 250,
+    "priceUnit": "night",
+    "area": 1000,
+    "location": "Portland, OR",
+    "facilities": [
+      "Living Room",
+      "Garden",
+      "Kitchen",
+      "Fireplace"
+    ],
+    "bedrooms": 2,
+    "washrooms": 1,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789838768/nest-vibes/seed/property-5.jpg",
+        "publicId": "nest-vibes/seed/property-5",
+        "width": 1500,
+        "height": 1000
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Emily Roberts",
+        "comment": "Amazing garden and peaceful location, we had a great stay.",
+        "rating": 4.9
+      },
+      {
+        "name": "Michael Edwards",
+        "comment": "Loved the garden and fireplace. Perfect getaway for a weekend.",
+        "rating": 4.7
+      },
+      {
+        "name": "Linda Harris",
+        "comment": "Cozy and charming. Would definitely stay here again.",
+        "rating": 4.6
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-09-13T00:00:00.000Z"
+  },
+  {
+    "id": "6",
+    "title": "Affordable Student Dorm",
+    "description": "Budget-friendly dorms with essential amenities close to campus.",
+    "category": "Student Housing",
+    "status": "Rent",
+    "price": 400,
+    "priceUnit": "month",
+    "area": 350,
+    "location": "College City, FL",
+    "facilities": [
+      "Living Room",
+      "Study Area",
+      "Kitchen",
+      "Bathroom"
+    ],
+    "bedrooms": 1,
+    "washrooms": 1,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789839192/nest-vibes/seed/property-6.jpg",
+        "publicId": "nest-vibes/seed/property-6",
+        "width": 1199,
+        "height": 800
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Liam Peterson",
+        "comment": "Simple but efficient dorms. Very close to university facilities.",
+        "rating": 4.3
+      },
+      {
+        "name": "Olivia Johnson",
+        "comment": "Affordable and convenient, but it could use better lighting.",
+        "rating": 4.1
+      },
+      {
+        "name": "Ethan Scott",
+        "comment": "Very functional and clean, perfect for a student on a budget.",
+        "rating": 4.5
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-09-16T00:00:00.000Z"
+  },
+  {
+    "id": "7",
+    "title": "Beachfront Villa",
+    "description": "Experience paradise with this beachfront villa offering direct beach access.",
+    "category": "Vacation Rental",
+    "status": "Rent",
+    "price": 450,
+    "priceUnit": "night",
+    "area": 3200,
+    "location": "Malibu, CA",
+    "facilities": [
+      "Living Room",
+      "Pool",
+      "Kitchen",
+      "Patio"
+    ],
+    "bedrooms": 5,
+    "washrooms": 4,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789839332/nest-vibes/seed/property-7.jpg",
+        "publicId": "nest-vibes/seed/property-7",
+        "width": 1024,
+        "height": 683
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Lucas Moore",
+        "comment": "Stunning views and luxury living. Worth every penny!",
+        "rating": 5
+      },
+      {
+        "name": "Sarah Thompson",
+        "comment": "Unbelievable location, great for a family vacation. Highly recommend.",
+        "rating": 4.9
+      },
+      {
+        "name": "Jason Miller",
+        "comment": "The beach access was perfect. Beautiful house and amazing service.",
+        "rating": 5
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-09-19T00:00:00.000Z"
+  },
+  {
+    "id": "8",
+    "title": "Sunnyvale Apartment",
+    "description": "A modern apartment with stunning views and high-end amenities.",
+    "category": "Apartment",
+    "status": "Rent",
+    "price": 1200,
+    "priceUnit": "month",
+    "area": 1200,
+    "location": "Sunnyvale, CA",
+    "facilities": [
+      "Living Room",
+      "Gym",
+      "Kitchen",
+      "Balcony"
+    ],
+    "bedrooms": 2,
+    "washrooms": 2,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789839489/nest-vibes/seed/property-8.png",
+        "publicId": "nest-vibes/seed/property-8",
+        "width": 932,
+        "height": 603
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Grace Collins",
+        "comment": "Modern and clean apartment, great value for the price.",
+        "rating": 4.5
+      },
+      {
+        "name": "Samuel Brown",
+        "comment": "The gym and balcony are great features. Convenient location as well.",
+        "rating": 4.6
+      },
+      {
+        "name": "Isabella White",
+        "comment": "Lovely apartment with beautiful views. Highly recommend it.",
+        "rating": 4.8
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-09-22T00:00:00.000Z"
+  },
+  {
+    "id": "9",
+    "title": "Luxury Penthouse",
+    "description": "A stunning luxury penthouse with floor-to-ceiling windows and panoramic views.",
+    "category": "Apartment",
+    "status": "Rent",
+    "price": 5000,
+    "priceUnit": "month",
+    "area": 3500,
+    "location": "New York, NY",
+    "facilities": [
+      "Living Room",
+      "Rooftop",
+      "Gym",
+      "Balcony"
+    ],
+    "bedrooms": 4,
+    "washrooms": 3,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789839497/nest-vibes/seed/property-9.jpg",
+        "publicId": "nest-vibes/seed/property-9",
+        "width": 1200,
+        "height": 800
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Henry Carter",
+        "comment": "Amazing views and spacious living. It’s a dream apartment.",
+        "rating": 5
+      },
+      {
+        "name": "Ava Davis",
+        "comment": "Luxurious, comfortable, and located in the heart of the city. Great stay.",
+        "rating": 4.9
+      },
+      {
+        "name": "Mia Walker",
+        "comment": "The rooftop and the gym are fantastic. Perfect for entertaining guests.",
+        "rating": 4.8
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-09-25T00:00:00.000Z"
+  },
+  {
+    "id": "10",
+    "title": "Urban Student Housing",
+    "description": "Affordable urban housing for students with great facilities.",
+    "category": "Student Housing",
+    "status": "Rent",
+    "price": 450,
+    "priceUnit": "month",
+    "area": 400,
+    "location": "Austin, TX",
+    "facilities": [
+      "Living Room",
+      "Study Area",
+      "Kitchen",
+      "Laundry"
+    ],
+    "bedrooms": 1,
+    "washrooms": 1,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789839501/nest-vibes/seed/property-10.jpg",
+        "publicId": "nest-vibes/seed/property-10",
+        "width": 650,
+        "height": 431
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Zoe Turner",
+        "comment": "Nice and clean. Close to campus and affordable rent.",
+        "rating": 4.4
+      },
+      {
+        "name": "James Harris",
+        "comment": "Great for students. Quiet and peaceful, but the room is a bit small.",
+        "rating": 4.2
+      },
+      {
+        "name": "Sophia Wright",
+        "comment": "Convenient location and affordable rent. I enjoyed my stay.",
+        "rating": 4.3
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-09-28T00:00:00.000Z"
+  },
+  {
+    "id": "11",
+    "title": "Cozy Mountain Cabin",
+    "description": "A charming cabin in the mountains with rustic decor and scenic views.",
+    "category": "Vacation Rental",
+    "status": "Rent",
+    "price": 200,
+    "priceUnit": "night",
+    "area": 1200,
+    "location": "Aspen, CO",
+    "facilities": [
+      "Living Room",
+      "Fireplace",
+      "Kitchen",
+      "Deck"
+    ],
+    "bedrooms": 2,
+    "washrooms": 2,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789839627/nest-vibes/seed/property-11.jpg",
+        "publicId": "nest-vibes/seed/property-11",
+        "width": 1000,
+        "height": 700
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Emma Williams",
+        "comment": "Beautiful location, perfect for a relaxing getaway.",
+        "rating": 4.8
+      },
+      {
+        "name": "Charlotte Wilson",
+        "comment": "Such a cozy cabin! The fireplace was a great touch for the chilly nights.",
+        "rating": 4.7
+      },
+      {
+        "name": "David Evans",
+        "comment": "Loved the mountain views and the peace and quiet. Definitely coming back.",
+        "rating": 4.9
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "12",
+    "title": "Spacious Loft",
+    "description": "A large, open loft with modern amenities and high ceilings.",
+    "category": "Apartment",
+    "status": "Rent",
+    "price": 2000,
+    "priceUnit": "month",
+    "area": 2000,
+    "location": "Chicago, IL",
+    "facilities": [
+      "Living Room",
+      "Gym",
+      "Kitchen",
+      "Workspace"
+    ],
+    "bedrooms": 2,
+    "washrooms": 2,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789839674/nest-vibes/seed/property-12.jpg",
+        "publicId": "nest-vibes/seed/property-12",
+        "width": 800,
+        "height": 532
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Sophia Brown",
+        "comment": "The loft is huge and the workspace is great for remote work.",
+        "rating": 4.6
+      },
+      {
+        "name": "Lucas Harris",
+        "comment": "Perfect for professionals who need a home office. Spacious and modern.",
+        "rating": 4.7
+      },
+      {
+        "name": "Megan Parker",
+        "comment": "Great loft with lots of natural light. The location is fantastic too.",
+        "rating": 4.8
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-10-04T00:00:00.000Z"
+  },
+  {
+    "id": "13",
+    "title": "Grand Estate",
+    "description": "A luxurious estate with expansive grounds and exquisite design.",
+    "category": "Apartment",
+    "status": "Sale",
+    "price": 3500000,
+    "priceUnit": "total",
+    "area": 5000,
+    "location": "Beverly Hills, CA",
+    "facilities": [
+      "Living Room",
+      "Swimming Pool",
+      "Home Theater",
+      "Gym"
+    ],
+    "bedrooms": 6,
+    "washrooms": 5,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789839742/nest-vibes/seed/property-13.jpg",
+        "publicId": "nest-vibes/seed/property-13",
+        "width": 1200,
+        "height": 801
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Olivia Martin",
+        "comment": "A truly luxurious property. Perfect for a large family.",
+        "rating": 5
+      },
+      {
+        "name": "Michael Roberts",
+        "comment": "The home theater and swimming pool are absolutely fantastic!",
+        "rating": 4.9
+      },
+      {
+        "name": "Isabella Taylor",
+        "comment": "The design is incredible, and the space is perfect for entertaining.",
+        "rating": 5
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-10-07T00:00:00.000Z"
+  },
+  {
+    "id": "14",
+    "title": "Elegant Townhouse",
+    "description": "A stylish townhouse with a private garden and high-quality finishes.",
+    "category": "Apartment",
+    "status": "Rent",
+    "price": 2500,
+    "priceUnit": "month",
+    "area": 1800,
+    "location": "Los Angeles, CA",
+    "facilities": [
+      "Living Room",
+      "Garden",
+      "Kitchen",
+      "Garage"
+    ],
+    "bedrooms": 3,
+    "washrooms": 2,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789839744/nest-vibes/seed/property-14.jpg",
+        "publicId": "nest-vibes/seed/property-14",
+        "width": 626,
+        "height": 351
+      }
+    ],
+    "reviews": [
+      {
+        "name": "William Clark",
+        "comment": "Lovely townhouse with a great private garden. Very spacious.",
+        "rating": 4.7
+      },
+      {
+        "name": "Amelia Johnson",
+        "comment": "Loved the garden and the location. Perfect for families.",
+        "rating": 4.6
+      },
+      {
+        "name": "Daniel Lee",
+        "comment": "High-quality finishes and a beautiful home. Would recommend!",
+        "rating": 4.8
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-10-10T00:00:00.000Z"
+  },
+  {
+    "id": "15",
+    "title": "Cozy Urban Loft",
+    "description": "A stylish urban loft with modern finishes and a vibrant location.",
+    "category": "Apartment",
+    "status": "Rent",
+    "price": 1600,
+    "priceUnit": "month",
+    "area": 1100,
+    "location": "Seattle, WA",
+    "facilities": [
+      "Living Room",
+      "Kitchen",
+      "Workspace"
+    ],
+    "bedrooms": 2,
+    "washrooms": 1,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789839759/nest-vibes/seed/property-15.jpg",
+        "publicId": "nest-vibes/seed/property-15",
+        "width": 626,
+        "height": 417
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Mason Hall",
+        "comment": "Great location in the city, perfect for young professionals.",
+        "rating": 4.4
+      },
+      {
+        "name": "Emma Davis",
+        "comment": "The loft is beautifully decorated and has a fantastic view. A bit noisy at times but worth it.",
+        "rating": 4.2
+      },
+      {
+        "name": "Liam Martinez",
+        "comment": "Comfortable and convenient. The modern amenities make it a great choice for anyone looking for a stylish place.",
+        "rating": 4.5
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-10-13T00:00:00.000Z"
+  },
+  {
+    "id": "16",
+    "title": "Riverside Cottage",
+    "description": "A charming riverside cottage perfect for a tranquil escape.",
+    "category": "Vacation Rental",
+    "status": "Rent",
+    "price": 275,
+    "priceUnit": "night",
+    "area": 1200,
+    "location": "Jacksonville, FL",
+    "facilities": [
+      "Living Room",
+      "Fireplace",
+      "Deck",
+      "Kitchen"
+    ],
+    "bedrooms": 2,
+    "washrooms": 2,
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/mo7hdhwt/image/upload/v1789839787/nest-vibes/seed/property-16.jpg",
+        "publicId": "nest-vibes/seed/property-16",
+        "width": 839,
+        "height": 526
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Charlotte Lewis",
+        "comment": "Lovely place by the river. It was peaceful and exactly what we needed.",
+        "rating": 4.8
+      },
+      {
+        "name": "Olivia Brown",
+        "comment": "The cottage was quaint and cozy, with a beautiful deck overlooking the river. The perfect spot for a relaxing getaway.",
+        "rating": 4.7
+      },
+      {
+        "name": "Ethan Wilson",
+        "comment": "A fantastic retreat. Everything was as described, and the setting was even more beautiful in person.",
+        "rating": 4.9
+      }
+    ],
+    "ownerId": "nestvibes",
+    "ownerName": "NestVibes Team",
+    "createdAt": "2024-10-16T00:00:00.000Z"
+  }
+]
