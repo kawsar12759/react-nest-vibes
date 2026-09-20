@@ -1,94 +1,161 @@
-import { useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProvider";
+import { useEffect, useRef, useState } from "react";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { PiList, PiX, PiSun, PiMoon, PiPlus, PiSquaresFour, PiHeart, PiUserCircle, PiSignOut, PiCalendarBlank } from "react-icons/pi";
+import { toast } from "sonner";
+import { useAuth } from "../../providers/AuthProvider";
+import { useTheme } from "../../providers/ThemeProvider";
+import Logo from "../../components/Logo";
+import Avatar from "../../components/Avatar";
 
+const links = [
+    { to: "/properties", label: "Browse homes" },
+    { to: "/about", label: "About" },
+    { to: "/blogs", label: "Journal" },
+    { to: "/reviews", label: "Reviews" },
+];
+
+const linkClass = ({ isActive }) =>
+    `relative px-1 py-2 text-sm font-semibold transition ${isActive ? "text-ink" : "text-muted hover:text-ink"} ` +
+    (isActive ? "after:absolute after:inset-x-1 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-plum" : "");
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut } = useAuth();
+    const { theme, toggleTheme } = useTheme();
     const navigate = useNavigate();
-    const navLinks = <>
-        <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/'>Home</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/about'>About Us</NavLink></li>
-        {user && <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/blogs'>Blog</NavLink></li>}
-        <li><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/reviews'>Reviews</NavLink></li>
-        {user && <li className=" md:hidden"><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/updateprofile'>{user.displayName}</NavLink></li>}
-        {!user &&
-            <li className=" xs:hidden"><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/signin'>Sign In</NavLink></li>}
-        {!user && <li className=" xs:hidden"><NavLink className={({ isActive }) => isActive ? "!text-[#111827] font-semibold !bg-[#F5F5F5] hover:bg-[#F5F5F5] hover:text-[#111827] active:!bg-[#374151] active:!text-[#F1F5F9]  visited:!bg-[#F5F5F5] visited:!text-[#111827]" : "active:!bg-[#374151] active:!text-[#F1F5F9] hover:bg-[#374151] hover:text-[#F9FAFB] "} to='/signup'>Sign Up</NavLink></li>
+    const location = useLocation();
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const menuRef = useRef(null);
 
-        }
+    useEffect(() => {
+        setMobileOpen(false);
+        setMenuOpen(false);
+    }, [location.pathname]);
 
-    </>
-    const handleSignOut = () => {
-        logOut()
-            .then(() => {
-                // Sign-out successful.
-                navigate('/signin', { state: { fromLogout: true } });
-            }).catch((error) => {
-                // An error happened.
-            });
-    }
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 8);
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
+    useEffect(() => {
+        if (!menuOpen) return;
+        const close = (e) => {
+            if (!menuRef.current?.contains(e.target)) setMenuOpen(false);
+        };
+        const onKey = (e) => e.key === "Escape" && setMenuOpen(false);
+        document.addEventListener("mousedown", close);
+        document.addEventListener("keydown", onKey);
+        return () => {
+            document.removeEventListener("mousedown", close);
+            document.removeEventListener("keydown", onKey);
+        };
+    }, [menuOpen]);
+
+    const handleSignOut = async () => {
+        await logOut();
+        toast("Signed out");
+        navigate("/");
+    };
+
+    const themeButton = (
+        <button onClick={toggleTheme} className="btn-quiet !p-2.5 text-lg" aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}>
+            {theme === "dark" ? <PiSun /> : <PiMoon />}
+        </button>
+    );
+
     return (
-        <div className="bg-[#111827] sticky text-[#E5E7EB] px-4 md:px-16 py-2 top-0 z-50">
-            <div className="navbar">
-                <div className="navbar-start w-fit xl:w-full ">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost xl:hidden">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
-                        </div>
-                        <ul
-                            tabIndex={0}
-                            className="bg-white menu menu-sm dropdown-content bg-base-100 text-[#111827] rounded-box z-[1] mt-3 w-52  p-2 shadow">
-                            {navLinks}
-                        </ul>
-                    </div>
-                    <Link className="font-semibold text-xl xs:text-2xl">NestVibes</Link>
+        <header className={`sticky top-0 z-50 border-b transition-colors ${scrolled || mobileOpen ? "border-line bg-paper/90 backdrop-blur-lg" : "border-transparent bg-paper"}`}>
+            <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-full focus:bg-plum focus:px-4 focus:py-2 focus:text-plum-ink">
+                Skip to content
+            </a>
+            <nav className="container-page flex h-16 items-center justify-between gap-4 md:h-[4.5rem]">
+                <Logo />
+
+                <ul className="hidden items-center gap-7 lg:flex">
+                    {links.map((l) => (
+                        <li key={l.to}><NavLink to={l.to} className={linkClass}>{l.label}</NavLink></li>
+                    ))}
+                </ul>
+
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                    {themeButton}
+                    {user ? (
+                        <>
+                            <Link to="/listings/new" className="btn-primary hidden sm:inline-flex">
+                                <PiPlus /> List a home
+                            </Link>
+                            <div className="relative" ref={menuRef}>
+                                <button
+                                    onClick={() => setMenuOpen((o) => !o)}
+                                    className="flex items-center rounded-full p-0.5 ring-2 ring-transparent transition hover:ring-plum/40"
+                                    aria-haspopup="menu"
+                                    aria-expanded={menuOpen}
+                                    aria-label="Account menu"
+                                >
+                                    <Avatar src={user.photoURL} name={user.displayName || user.email} size={38} />
+                                </button>
+                                {menuOpen && (
+                                    <div role="menu" className="card absolute right-0 mt-3 w-64 overflow-hidden p-1.5 shadow-pop animate-rise [animation-duration:.2s]">
+                                        <div className="border-b border-line px-3 pb-3 pt-2">
+                                            <p className="truncate font-bold">{user.displayName || "Your account"}</p>
+                                            <p className="truncate text-xs text-muted">{user.email}</p>
+                                        </div>
+                                        {[
+                                            { to: "/dashboard", icon: PiSquaresFour, label: "Dashboard" },
+                                            { to: "/dashboard/saved", icon: PiHeart, label: "Saved homes" },
+                                            { to: "/dashboard/tours", icon: PiCalendarBlank, label: "Tour requests" },
+                                            { to: "/dashboard/profile", icon: PiUserCircle, label: "Profile" },
+                                        ].map(({ to, icon: Icon, label }) => (
+                                            <Link key={to} to={to} role="menuitem" className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-semibold hover:bg-sunken">
+                                                <Icon className="text-lg text-muted" /> {label}
+                                            </Link>
+                                        ))}
+                                        <button onClick={handleSignOut} role="menuitem" className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-semibold text-danger hover:bg-sunken">
+                                            <PiSignOut className="text-lg" /> Sign out
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <Link to="/signin" state={{ from: location.pathname }} className="btn-quiet hidden xs:inline-flex">Sign in</Link>
+                            <Link to="/signup" className="btn-primary hidden xs:inline-flex">Create account</Link>
+                        </>
+                    )}
+                    <button onClick={() => setMobileOpen((o) => !o)} className="btn-quiet !p-2.5 text-xl lg:hidden" aria-expanded={mobileOpen} aria-label="Menu">
+                        {mobileOpen ? <PiX /> : <PiList />}
+                    </button>
                 </div>
-                <div className="navbar-center hidden xl:flex">
-                    <ul className="menu menu-horizontal px-1 font-medium">
-                        {navLinks}
+            </nav>
+
+            {mobileOpen && (
+                <div className="border-t border-line lg:hidden">
+                    <ul className="container-page flex flex-col py-3">
+                        {links.map((l) => (
+                            <li key={l.to}>
+                                <NavLink to={l.to} className={({ isActive }) => `block rounded-lg px-3 py-3 font-semibold ${isActive ? "bg-plum-soft text-plum" : "hover:bg-sunken"}`}>
+                                    {l.label}
+                                </NavLink>
+                            </li>
+                        ))}
+                        <li className="mt-2 flex gap-2 border-t border-line pt-4">
+                            {user ? (
+                                <Link to="/listings/new" className="btn-primary flex-1"><PiPlus /> List a home</Link>
+                            ) : (
+                                <>
+                                    <Link to="/signin" className="btn-ghost flex-1">Sign in</Link>
+                                    <Link to="/signup" className="btn-primary flex-1">Create account</Link>
+                                </>
+                            )}
+                        </li>
                     </ul>
                 </div>
-                <div className="navbar-end w-full">
-                    {user ?
-                        <div className="flex items-center">
-                            <p className="mr-4 hidden md:inline-block text-base lg:text-lg font-medium">{user.displayName}</p>
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mr-4 sm:inline-block hidden">
-                                <div className="">
-                                    <Link to='/updateprofile'><img
-                                        className="w-14 rounded-full"
-                                        alt={user.displayName}
-                                        src={user.photoURL}
-                                    /></Link>
-                                </div>
-
-                            </div>
-
-                            <button onClick={handleSignOut} className="btn bg-[#EF4444] text-[#FFFFFF] hover:bg-[#DC2626] px-3 xs:px-6 py-1 xs:py-3 rounded-md font-semibold border-none">Sign Out</button>
-                        </div>
-                        :
-                        <>
-                            <Link to='/signin'><button className="btn bg-[#FBBF24] hidden xs:inline-block text-[#111827] hover:bg-yellow-600 px-6 py-3 rounded-md mr-5 font-semibold border-none">Sign In</button></Link>
-                            <Link to='/signup'><button className="btn bg-[#0D9488] hidden xs:inline-block text-white hover:bg-[#0B7665] px-6 py-3 rounded-md font-semibold border-none">Sign Up</button></Link></>
-
-                    }
-
-
-
-                </div>
-            </div>
-        </div>
+            )}
+        </header>
     );
 };
 

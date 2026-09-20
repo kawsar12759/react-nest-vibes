@@ -1,46 +1,24 @@
-import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import BlogCard from "../../components/BlogCard";
+import blogs from "../../data/blogs.json";
 
+const sorted = [...blogs].sort((a, b) => b.date.localeCompare(a.date));
 
-const Blogs = () => {
-    const [blogs, setBlogs] = useState([]);
-    useEffect(() => {
-        fetch('blogs.json')
-            .then(res => res.json())
-            .then(data => setBlogs(data));
-    }, [])
-    return (
-        <section className="py-12 bg-gray-100 text-black">
-            <Helmet>
-                <title>NestVibes | Blogs</title>
-            </Helmet>
-            <div className="container mx-auto">
-                <h2 className="text-center text-3xl font-bold mb-8">Latest Blogs</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-10">
-                    {blogs.map((blog) => (
-                        <div key={blog.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
-                            <img
-                                src={blog.imageUrl}
-                                alt={blog.title}
-                                className="w-full h-56 object-cover"
-                            />
-                            <div className="p-6">
-                                <h3 className="text-xl font-semibold">{blog.title}</h3>
-                                <p className="text-gray-600 mt-2">By <span className="font-semibold">{blog.author}</span> on {new Date(blog.date).toLocaleDateString()}</p>
-                                <p className="mt-4 text-gray-600">{blog.excerpt}</p>
-                                <a
-                                    href={`/blogs/${blog.id}`}
-                                    className="block mt-4 text-teal-500 font-semibold"
-                                >
-                                    Read more
-                                </a>
-                            </div>
-                        </div>
-                    ))}
+const Blogs = () => (
+    <div className="container-page pt-12">
+        <Helmet>
+            <title>NestVibes | Journal</title>
+        </Helmet>
+        <p className="eyebrow">The journal</p>
+        <h1 className="display mt-3 max-w-3xl text-5xl leading-[1.02] sm:text-6xl">Advice for renters, buyers and owners</h1>
+        <div className="mt-14 grid gap-x-8 gap-y-16 md:grid-cols-2 xl:grid-cols-3">
+            {sorted.map((b, i) => (
+                <div key={b.id} className={i === 0 ? "md:col-span-2 xl:col-span-3" : ""}>
+                    <BlogCard blog={b} featured={i === 0} />
                 </div>
-            </div>
-        </section>
-    );
-};
+            ))}
+        </div>
+    </div>
+);
 
 export default Blogs;

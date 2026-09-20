@@ -1,124 +1,97 @@
-# 🏡 NestVibes – Residential Real Estate Website
+# NestVibes
 
-[Live Site 🌐](https://nest-vibes-b0e09.web.app/)  
-[GitHub Repository 📁](https://github.com/kawsar12759/react-nest-vibes)
+**A residential real-estate marketplace: browse apartments, student housing and vacation rentals, save homes, book tours, and list your own place with drag-and-drop photo uploads.**
 
-NestVibes is a responsive, modern residential real estate website designed to help users explore and find different types of housing such as apartments, student housing, and vacation rentals. Built with **React.js**, **Tailwind CSS**, and **Firebase**, this platform offers an elegant user experience for property searching.
+[Live site](https://nest-vibes-b0e09.web.app/) · [Repository](https://github.com/kawsar12759/react-nest-vibes)
 
----
-
-## ✨ Features
-
-- 🔍 **Property Categories**: Explore Apartments, Student Housing, and Vacation Rentals.
-- 🖼️ **Home Slider**: Dynamic slider with eye-catching visuals of properties.
-- 🧭 **Navigation Bar**: Fully responsive with active link styles.
-- 📝 **Authentication**: Register/Login with Firebase Authentication (email & password).
-- 📸 **Photo URL Input**: Users can upload their profile picture via URL during registration.
-- 🔐 **Protected Routes**: Certain pages are only accessible after logging in.
-- 📄 **Property Details Page**: View full information and images of each property.
-- 📱 **Responsive Design**: Mobile-friendly layout with clean UI using Tailwind CSS.
+Built with React 18, React Router 6 data routers, Tailwind CSS, Firebase Auth + Cloud Firestore, and Cloudinary.
 
 ---
 
-## 🛠️ Technologies Used
+## Features
 
-### Frontend:
-- **React.js**
-- **React Router DOM**
-- **Tailwind CSS**
-- **DaisyUI**
-- **Heroicons**
+**For renters and buyers**
+- **Search and filter**: keyword, type, buy/rent, bedrooms, price range and sorting. Filters live in the URL, so a search can be shared or bookmarked.
+- **Property pages**: photo gallery with a keyboard-navigable lightbox, key facts, amenities, an embedded map, resident reviews and similar homes.
+- **Cost calculators**: an amortized mortgage calculator for homes for sale, and a stay estimator for nightly rentals.
+- **Saved homes**: a heart on every card, stored per user in Firestore and synced in real time across devices.
+- **Tour booking**: pick a date and time; the request goes to the listing owner.
 
-### Backend / Hosting:
-- **Firebase Authentication**
-- **Firebase Hosting**
+**For owners**
+- **List a home**: multi-photo upload straight to Cloudinary, with drag-and-drop, per-file progress, retry, reordering and cover selection.
+- **Dashboard**: overview stats, manage (edit/delete) listings, confirm or decline incoming tour requests, and track your own requests.
+- **Profile**: upload a profile photo (Cloudinary), change display name, send a password reset.
 
----
+**Across the app**
+- Email/password and Google sign-in (Firebase Auth), with protected routes that return you to where you were.
+- Light and dark themes (follows the system, remembers your choice, no flash on load).
+- Responsive from 320 px up, visible keyboard focus, a skip link, and support for reduced motion.
+- Route-level code splitting and vendor chunking; images served through Cloudinary with `f_auto,q_auto`, responsive `srcset` and smart cropping.
 
-## 📁 Project Structure
-
-```bash
-react-nest-vibes/
-├── public/
-├── src/
-│   ├── assets/               # Images and static assets
-│   ├── components/           # Reusable components like Navbar, Footer, Slider, etc.
-│   ├── layouts/              # Layout wrapper for pages
-│   ├── pages/                # Page components like Home, Login, Register, Details
-│   ├── routes/               # Route definitions and private route logic
-│   ├── context/              # Auth context using React Context API
-│   ├── App.jsx
-│   └── main.jsx
-├── tailwind.config.js
-├── postcss.config.js
-├── firebase.config.js
-├── package.json
-└── README.md
+## Architecture
 
 ```
+Browser ──► Cloudinary (unsigned, image-only upload preset)
+   │            └─ returns secure_url + public_id + delete_token
+   │
+   ├──► Firebase Auth (email/password, Google)
+   └──► Cloud Firestore
+          listings/{id}                   public read, owner-only writes, schema-validated
+          users/{uid}/favorites/{id}      private to the user
+          tourRequests/{id}               visible to requester + listing owner;
+                                          owner may only change `status`
+```
 
----
+- **No secrets in the bundle.** Only the cloud name and an *unsigned* preset name are exposed (`VITE_` vars). The preset allows image formats only, caps size, stores under `nest-vibes/`, and returns a short-lived delete token so a photo removed before saving is also deleted from Cloudinary. The API secret stays in `.env.local` and is used only by the local setup scripts.
+- **Security rules** ([firestore.rules](firestore.rules)) enforce ownership and validate listing fields server-side (types, ranges, 1–10 images).
+- **Seed catalogue**: the 16 curated listings and 7 articles ship as JSON in `src/data/`, with images migrated to Cloudinary. Community listings from Firestore are merged in and sorted newest first. If Firestore is unreachable, the catalogue still renders.
 
-## 🚀 Getting Started
+```
+src/
+├── components/     PropertyCard, ImageUploader, AvatarUploader, SearchBar, …
+├── data/           Seed listings, blogs, reviews, site imagery (Cloudinary URLs)
+├── firebase/       App, Auth and Firestore initialization
+├── hooks/          useAsync
+├── layout/         Root layout (navbar, footer, toasts, favorites provider)
+├── lib/            cloudinary.js, listings.js, tours.js, format.js
+├── pages/          Home, Properties, PropertyDetails, ListingForm, Dashboard/*, …
+├── providers/      Auth, Theme, Favorites contexts
+└── routes/         Router (lazy routes) and PrivateRoute
+scripts/
+├── setup-cloudinary.mjs      creates/updates the unsigned upload preset
+└── migrate-seed-images.mjs   moves seed images to Cloudinary, normalizes seed data
+```
 
-### Prerequisites
+## Getting started
 
-- Node.js (v18+ recommended)
-- Firebase account for authentication and hosting
+**Prerequisites:** Node.js 18+ (20.6+ for the setup scripts), a Firebase project with Email/Password and Google sign-in enabled and a Firestore database, and a Cloudinary account.
 
-### Installation
-1. Clone the repository:
 ```bash
 git clone https://github.com/kawsar12759/react-nest-vibes.git
 cd react-nest-vibes
-```
-
-2. Install dependencies:
-```bash
 npm install
-```
-3. Add your Firebase configuration:
-- Create a file named firebase.config.js in the root of src/
-- Add your Firebase credentials:
-```bash
-// src/firebase.config.js
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MSG_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-export default firebaseConfig;
-```
-4. Run the development server:
-```bash
+cp .env.example .env.local        # fill in Firebase + Cloudinary values
+npm run setup:cloudinary          # one-time: creates the unsigned upload preset
+firebase deploy --only firestore:rules
 npm run dev
 ```
 
----
+| Script | What it does |
+| --- | --- |
+| `npm run dev` | Start the Vite dev server |
+| `npm run build` | Production build to `dist/` |
+| `npm run lint` | ESLint |
+| `npm run setup:cloudinary` | Create or update the unsigned, image-only upload preset |
+| `npm run migrate:images` | Re-upload seed images to Cloudinary and regenerate `src/data/` |
+| `npm run deploy` | Build and deploy hosting + Firestore rules |
 
-## 📦 Deployment
-The app is deployed using Firebase Hosting:
-```bash 
-npm run build
-firebase deploy
-```
+## Tech stack
 
----
+React 18 · React Router 6 · Tailwind CSS 3 · Firebase Auth · Cloud Firestore · Cloudinary · Sonner · React Icons (Phosphor) · Vite 5 · Firebase Hosting
 
-## 🤝 Contributing
-Contributions are welcome!
-If you'd like to suggest improvements or report issues, feel free to open an issue or pull request.
+Type is set in Fraunces (display) and Manrope (text).
 
----
+## Author
 
-## 🧑‍💻 Author
-
-**MD. Kawsar Hossain**  
-Frontend & Backend Developer | Firebase | React.js | Tailwind  
-📧 Email: [kawsar.hossain12759@gmail.com](mailto:kawsar.hossain12759@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/kawsar-hossain-antor/)  
-🐙 [GitHub](https://github.com/kawsar12759)
-
+**MD. Kawsar Hossain**
+[kawsar.hossain12759@gmail.com](mailto:kawsar.hossain12759@gmail.com) · [LinkedIn](https://www.linkedin.com/in/kawsar-hossain-antor/) · [GitHub](https://github.com/kawsar12759)

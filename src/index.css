@@ -1,10 +1,143 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Palette: cool limestone neutrals, aubergine ink, plum for actions,
+   coral reserved for "for sale" and saved homes. Channels are space-separated so Tailwind can add alpha. */
+:root {
+  --paper: 243 242 246;
+  --surface: 255 255 255;
+  --sunken: 234 231 239;
+  --ink: 29 21 38;
+  --muted: 102 94 116;
+  --line: 221 216 228;
+  --plum: 91 42 134;
+  --plum-deep: 62 25 94;
+  --plum-ink: 255 255 255;
+  --plum-soft: 233 225 243;
+  --coral: 214 82 60;
+  --coral-soft: 251 228 223;
+  --danger: 190 40 52;
+  --shadow: 29 21 38;
+  color-scheme: light;
+}
 
-body{
-  font-family: "Montserrat", sans-serif;
+.dark {
+  --paper: 17 13 22;
+  --surface: 26 20 34;
+  --sunken: 21 16 28;
+  --ink: 238 234 244;
+  --muted: 163 154 178;
+  --line: 48 40 60;
+  --plum: 190 156 232;
+  --plum-deep: 150 112 200;
+  --plum-ink: 24 14 36;
+  --plum-soft: 50 34 70;
+  --coral: 244 138 114;
+  --coral-soft: 72 36 32;
+  --danger: 240 110 118;
+  --shadow: 0 0 0;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    @apply bg-paper text-ink antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans bg-paper text-ink;
+    min-width: 320px;
+    font-feature-settings: 'tnum' 1;
+  }
+  h1, h2, h3 {
+    font-variation-settings: 'SOFT' 50, 'WONK' 0;
+  }
+  ::selection {
+    @apply bg-plum/25;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-plum ring-offset-2 ring-offset-paper;
+  }
+  dialog::backdrop {
+    background: rgb(17 13 22 / 0.6);
+    backdrop-filter: blur(4px);
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10;
+  }
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.18em] text-plum;
+  }
+  .display {
+    @apply font-display font-medium tracking-tight;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold
+      transition duration-200 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-plum text-plum-ink hover:bg-plum-deep;
+  }
+  .btn-ghost {
+    @apply btn border border-line bg-surface text-ink hover:border-ink/40;
+  }
+  .btn-quiet {
+    @apply btn text-muted hover:bg-sunken hover:text-ink;
+  }
+  .btn-danger {
+    @apply btn bg-danger text-white hover:bg-danger/90;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-sm font-semibold text-ink;
+  }
+  .field {
+    @apply w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-ink placeholder:text-muted/70
+      transition focus:border-plum focus:outline-none focus:ring-2 focus:ring-plum/20;
+  }
+  .field-hint {
+    @apply mt-1.5 text-xs text-muted;
+  }
+
+  .card {
+    @apply rounded-card border border-line bg-surface;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm font-semibold
+      text-muted transition hover:border-ink/30 hover:text-ink;
+  }
+  .chip-active {
+    @apply border-plum bg-plum text-plum-ink hover:border-plum hover:text-plum-ink;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-sunken;
+  }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-surface/60 to-transparent;
+  }
+
+  /* Long-form copy for blog posts. */
+  .prose-nest p {
+    @apply mb-5 text-[1.0625rem] leading-8 text-ink/85;
+  }
+  .prose-nest p:first-of-type::first-letter {
+    @apply float-left mr-3 mt-1 font-display text-6xl leading-[0.85] text-plum;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

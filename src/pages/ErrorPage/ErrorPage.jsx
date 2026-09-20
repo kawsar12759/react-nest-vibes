@@ -1,18 +1,34 @@
-import { Link } from "react-router-dom";
-import errorSvg from '../../assets/robot-404-error-errors.1024x851.png'
+import { Link, isRouteErrorResponse, useRouteError } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { PiArrowLeft, PiHouseLine } from "react-icons/pi";
+import Logo from "../../components/Logo";
 
 const ErrorPage = () => {
-    return (
-        <div className="h-screen bg-white text-black flex items-center justify-center p-8">
-            <div className="text-center ">
+    const error = useRouteError();
+    const notFound = isRouteErrorResponse(error) && error.status === 404;
 
-                <div className="flex justify-center">
-                <img className="w-56 mb-6" src={errorSvg} alt="" />
+    return (
+        <div className="flex min-h-screen flex-col">
+            <Helmet>
+                <title>{notFound ? "NestVibes | Page not found" : "NestVibes | Something went wrong"}</title>
+            </Helmet>
+            <header className="container-page flex h-[4.5rem] items-center"><Logo /></header>
+            <main className="container-page flex flex-1 flex-col items-center justify-center pb-20 text-center">
+                <div className="relative flex h-56 w-44 items-end justify-center rounded-arch border-2 border-plum/40 pb-8" aria-hidden="true">
+                    <span className="font-display text-7xl font-light italic text-plum">{notFound ? "404" : "!"}</span>
+                    <span className="absolute -right-3 top-6 h-10 w-7 rounded-arch bg-coral" />
                 </div>
-                <p className="text-2xl font-bold mb-3">Page Not Found!</p>
-                <p className="mb-3 text-slate-600">The page you are looking for doesn't exist or an other error occured.</p>
-                <Link to="/"><button className="btn bg-[#111827] text-white px-6 py-2 hover:bg-[#374151] hover:text-[#F9FAFB]">Go to Home</button></Link>
-            </div>
+                <h1 className="display mt-10 text-4xl sm:text-5xl">{notFound ? "This address doesn’t exist" : "Something went wrong"}</h1>
+                <p className="mt-3 max-w-md text-muted">
+                    {notFound
+                        ? "The page may have moved, or the link is mistyped. Try browsing homes instead."
+                        : "The page failed to load. Refresh to try again, or head back home."}
+                </p>
+                <div className="mt-8 flex flex-wrap justify-center gap-3">
+                    <button onClick={() => window.history.back()} className="btn-ghost"><PiArrowLeft /> Go back</button>
+                    <Link to="/" className="btn-primary"><PiHouseLine /> Go to home</Link>
+                </div>
+            </main>
         </div>
     );
 };
