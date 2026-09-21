@@ -23,7 +23,9 @@ Built with React 18, React Router 6 data routers, Tailwind CSS, Firebase Auth + 
 - **Profile**: upload a profile photo (Cloudinary), change display name, send a password reset.
 
 **Across the app**
+- **Editorial pages**: an article index with detail pages, a resident reviews wall, and an about page.
 - Email/password and Google sign-in (Firebase Auth), with protected routes that return you to where you were.
+- Per-page titles and social meta tags (`react-helmet-async`).
 - Light and dark themes (follows the system, remembers your choice, no flash on load).
 - Responsive from 320 px up, visible keyboard focus, a skip link, and support for reduced motion.
 - Route-level code splitting and vendor chunking; images served through Cloudinary with `f_auto,q_auto`, responsive `srcset` and smart cropping.
@@ -49,18 +51,35 @@ Browser ──► Cloudinary (unsigned, image-only upload preset)
 ```
 src/
 ├── components/     PropertyCard, ImageUploader, AvatarUploader, SearchBar, …
-├── data/           Seed listings, blogs, reviews, site imagery (Cloudinary URLs)
+├── data/           16 seed listings, 7 articles, 11 reviews, site imagery (Cloudinary URLs)
 ├── firebase/       App, Auth and Firestore initialization
 ├── hooks/          useAsync
-├── layout/         Root layout (navbar, footer, toasts, favorites provider)
+├── layout/Root/    Shell: route progress bar, main outlet, toaster, scroll restoration
 ├── lib/            cloudinary.js, listings.js, tours.js, format.js
-├── pages/          Home, Properties, PropertyDetails, ListingForm, Dashboard/*, …
+├── pages/          Home, Properties, PropertyDetails, ListingForm, Blogs, Reviews,
+│                   About, SignIn, SignUp, ErrorPage, Dashboard/*
 ├── providers/      Auth, Theme, Favorites contexts
-└── routes/         Router (lazy routes) and PrivateRoute
+├── routes/         Router (lazy routes) and PrivateRoute
+└── shared/         Navbar, Footer
 scripts/
 ├── setup-cloudinary.mjs      creates/updates the unsigned upload preset
 └── migrate-seed-images.mjs   moves seed images to Cloudinary, normalizes seed data
 ```
+
+## Routes
+
+| Path | Page |
+| --- | --- |
+| `/` | Home — hero, categories, how it works, testimonials, owner CTA |
+| `/properties` | Catalogue with URL-driven search, filters and sorting |
+| `/property/:id` | Listing detail: gallery, amenities, map, reviews, tour form, calculator |
+| `/about`, `/reviews` | About page, resident reviews wall |
+| `/blogs`, `/blogs/:id` | Article index and detail |
+| `/signin`, `/signup` | Email/password and Google auth |
+| `/listings/new`, `/listings/:id/edit` | 🔒 Create or edit a listing |
+| `/dashboard` | 🔒 Overview, plus `listings`, `saved`, `tours`, `profile` |
+
+🔒 = behind `PrivateRoute`; every page below the root is lazily loaded.
 
 ## Getting started
 
@@ -80,6 +99,7 @@ npm run dev
 | --- | --- |
 | `npm run dev` | Start the Vite dev server |
 | `npm run build` | Production build to `dist/` |
+| `npm run preview` | Serve the production build locally |
 | `npm run lint` | ESLint |
 | `npm run setup:cloudinary` | Create or update the unsigned, image-only upload preset |
 | `npm run migrate:images` | Re-upload seed images to Cloudinary and regenerate `src/data/` |
@@ -87,7 +107,7 @@ npm run dev
 
 ## Tech stack
 
-React 18 · React Router 6 · Tailwind CSS 3 · Firebase Auth · Cloud Firestore · Cloudinary · Sonner · React Icons (Phosphor) · Vite 5 · Firebase Hosting
+React 18 · React Router 6 · Tailwind CSS 3 · Firebase Auth · Cloud Firestore · Cloudinary · React Helmet Async · Sonner · React Icons (Phosphor) · Vite 5 · Firebase Hosting
 
 Type is set in Fraunces (display) and Manrope (text).
 
